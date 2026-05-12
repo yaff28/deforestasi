@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="id">
 <head>
 <meta charset="UTF-8">
@@ -29,66 +30,66 @@
 html { scroll-behavior: smooth; }
 
 body {
-  background: var(--deep);
-  color: var(--cream);
-  font-family: 'Lora', serif;
-  overflow-x: hidden;
+background: var(–deep);
+color: var(–cream);
+font-family: ‘Lora’, serif;
+overflow-x: hidden;
 }
 
 /* NOISE OVERLAY */
 body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-  pointer-events: none;
-  z-index: 9997;
-  opacity: 0.5;
+content: ‘’;
+position: fixed;
+inset: 0;
+background-image: url(“data:image/svg+xml,%3Csvg viewBox=‘0 0 200 200’ xmlns=‘http://www.w3.org/2000/svg’%3E%3Cfilter id=‘n’%3E%3CfeTurbulence type=‘fractalNoise’ baseFrequency=‘0.9’ numOctaves=‘4’ stitchTiles=‘stitch’/%3E%3C/filter%3E%3Crect width=‘100%25’ height=‘100%25’ filter=‘url(%23n)’ opacity=‘0.04’/%3E%3C/svg%3E”);
+pointer-events: none;
+z-index: 9997;
+opacity: 0.5;
 }
 
 /* SCROLLBAR */
 ::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--deep); }
-::-webkit-scrollbar-thumb { background: var(--moss); border-radius: 3px; }
+::-webkit-scrollbar-track { background: var(–deep); }
+::-webkit-scrollbar-thumb { background: var(–moss); border-radius: 3px; }
 
 /* HERO */
 .hero {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-  padding: 60px 20px;
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+position: relative;
+overflow: hidden;
+padding: 60px 20px;
 }
 
 .hero-bg {
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse 80% 60% at 50% 120%, rgba(74,124,89,0.25) 0%, transparent 60%),
-    radial-gradient(ellipse 40% 40% at 20% 50%, rgba(26,58,42,0.6) 0%, transparent 50%),
-    radial-gradient(ellipse 40% 60% at 80% 30%, rgba(13,31,23,0.8) 0%, transparent 50%),
-    linear-gradient(180deg, var(--deep) 0%, #0a1a10 50%, #04100a 100%);
+position: absolute;
+inset: 0;
+background:
+radial-gradient(ellipse 80% 60% at 50% 120%, rgba(74,124,89,0.25) 0%, transparent 60%),
+radial-gradient(ellipse 40% 40% at 20% 50%, rgba(26,58,42,0.6) 0%, transparent 50%),
+radial-gradient(ellipse 40% 60% at 80% 30%, rgba(13,31,23,0.8) 0%, transparent 50%),
+linear-gradient(180deg, var(–deep) 0%, #0a1a10 50%, #04100a 100%);
 }
 
 /* Animated tree silhouettes */
 .trees-container {
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 45%;
-  display: flex;
-  align-items: flex-end;
-  gap: 0;
+position: absolute;
+bottom: 0; left: 0; right: 0;
+height: 45%;
+display: flex;
+align-items: flex-end;
+gap: 0;
 }
 
 .tree-svg {
-  flex: 1;
-  min-width: 60px;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: treeRise 1.5s ease forwards;
+flex: 1;
+min-width: 60px;
+opacity: 0;
+transform: translateY(20px);
+animation: treeRise 1.5s ease forwards;
 }
 .tree-svg:nth-child(1) { animation-delay: 0.1s; }
 .tree-svg:nth-child(2) { animation-delay: 0.2s; }
@@ -102,914 +103,840 @@ body::before {
 .tree-svg:nth-child(10) { animation-delay: 0.22s; }
 
 @keyframes treeRise {
-  to { opacity: 1; transform: translateY(0); }
+to { opacity: 1; transform: translateY(0); }
 }
 
 /* Fireflies */
 .fireflies {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
+position: absolute;
+inset: 0;
+pointer-events: none;
 }
 .firefly {
-  position: absolute;
-  width: 3px; height: 3px;
-  background: var(--gold);
-  border-radius: 50%;
-  animation: fly var(--dur, 8s) ease-in-out infinite var(--del, 0s);
-  box-shadow: 0 0 6px 2px rgba(212,168,67,0.6);
+position: absolute;
+width: 3px; height: 3px;
+background: var(–gold);
+border-radius: 50%;
+animation: fly var(–dur, 8s) ease-in-out infinite var(–del, 0s);
+box-shadow: 0 0 6px 2px rgba(212,168,67,0.6);
 }
 @keyframes fly {
-  0%, 100% { transform: translate(0,0); opacity: 0; }
-  10% { opacity: 1; }
-  50% { transform: translate(var(--tx, 50px), var(--ty, -80px)); opacity: 0.8; }
-  90% { opacity: 0.3; }
+0%, 100% { transform: translate(0,0); opacity: 0; }
+10% { opacity: 1; }
+50% { transform: translate(var(–tx, 50px), var(–ty, -80px)); opacity: 0.8; }
+90% { opacity: 0.3; }
 }
 
 .hero-content {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  max-width: 900px;
+position: relative;
+z-index: 2;
+text-align: center;
+max-width: 900px;
 }
 
 .hero-label {
-  font-family: 'Space Mono', monospace;
-  font-size: 0.7rem;
-  letter-spacing: 0.4em;
-  color: var(--leaf);
-  text-transform: uppercase;
-  margin-bottom: 24px;
-  opacity: 0;
-  animation: fadeUp 1s ease 0.5s forwards;
+font-family: ‘Space Mono’, monospace;
+font-size: 0.7rem;
+letter-spacing: 0.4em;
+color: var(–leaf);
+text-transform: uppercase;
+margin-bottom: 24px;
+opacity: 0;
+animation: fadeUp 1s ease 0.5s forwards;
 }
 
 .hero-title {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(4rem, 12vw, 10rem);
-  font-weight: 900;
-  line-height: 0.9;
-  color: var(--cream);
-  letter-spacing: -0.02em;
-  opacity: 0;
-  animation: fadeUp 1s ease 0.7s forwards;
+font-family: ‘Playfair Display’, serif;
+font-size: clamp(4rem, 12vw, 10rem);
+font-weight: 900;
+line-height: 0.9;
+color: var(–cream);
+letter-spacing: -0.02em;
+opacity: 0;
+animation: fadeUp 1s ease 0.7s forwards;
 }
 
 .hero-title span {
-  color: var(--burnt);
-  display: block;
-  font-style: italic;
+color: var(–burnt);
+display: block;
+font-style: italic;
 }
 
 .hero-subtitle {
-  font-family: 'Lora', serif;
-  font-size: clamp(1rem, 2.5vw, 1.4rem);
-  color: var(--smoke);
-  margin-top: 24px;
-  line-height: 1.7;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  opacity: 0;
-  animation: fadeUp 1s ease 0.9s forwards;
+font-family: ‘Lora’, serif;
+font-size: clamp(1rem, 2.5vw, 1.4rem);
+color: var(–smoke);
+margin-top: 24px;
+line-height: 1.7;
+max-width: 600px;
+margin-left: auto;
+margin-right: auto;
+opacity: 0;
+animation: fadeUp 1s ease 0.9s forwards;
 }
 
 .hero-stats {
-  display: flex;
-  gap: 40px;
-  justify-content: center;
-  margin-top: 48px;
-  flex-wrap: wrap;
-  opacity: 0;
-  animation: fadeUp 1s ease 1.1s forwards;
+display: flex;
+gap: 40px;
+justify-content: center;
+margin-top: 48px;
+flex-wrap: wrap;
+opacity: 0;
+animation: fadeUp 1s ease 1.1s forwards;
 }
 
 .stat-item {
-  text-align: center;
-  padding: 20px 28px;
-  border: 1px solid rgba(106,177,135,0.2);
-  background: rgba(26,58,42,0.3);
-  backdrop-filter: blur(10px);
-  border-radius: 4px;
-  transition: all 0.3s ease;
+text-align: center;
+padding: 20px 28px;
+border: 1px solid rgba(106,177,135,0.2);
+background: rgba(26,58,42,0.3);
+backdrop-filter: blur(10px);
+border-radius: 4px;
+transition: all 0.3s ease;
 }
 .stat-item:hover {
-  border-color: var(--leaf);
-  background: rgba(26,58,42,0.5);
-  transform: translateY(-4px);
+border-color: var(–leaf);
+background: rgba(26,58,42,0.5);
+transform: translateY(-4px);
 }
 .stat-num {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.4rem;
-  font-weight: 700;
-  color: var(--gold);
-  display: block;
+font-family: ‘Playfair Display’, serif;
+font-size: 2.4rem;
+font-weight: 700;
+color: var(–gold);
+display: block;
 }
 .stat-desc {
-  font-family: 'Space Mono', monospace;
-  font-size: 0.65rem;
-  color: var(--smoke);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin-top: 4px;
+font-family: ‘Space Mono’, monospace;
+font-size: 0.65rem;
+color: var(–smoke);
+letter-spacing: 0.1em;
+text-transform: uppercase;
+margin-top: 4px;
 }
 
 .scroll-hint {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-family: 'Space Mono', monospace;
-  font-size: 0.6rem;
-  letter-spacing: 0.3em;
-  color: var(--moss);
-  text-transform: uppercase;
-  animation: bounce 2s ease infinite;
-  z-index: 2;
+position: absolute;
+bottom: 30px;
+left: 50%;
+transform: translateX(-50%);
+font-family: ‘Space Mono’, monospace;
+font-size: 0.6rem;
+letter-spacing: 0.3em;
+color: var(–moss);
+text-transform: uppercase;
+animation: bounce 2s ease infinite;
+z-index: 2;
 }
 @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(-8px)} }
 
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+from { opacity: 0; transform: translateY(30px); }
+to { opacity: 1; transform: translateY(0); }
 }
 
 /* NAVIGATION */
 .nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 100;
-  padding: 16px 32px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: linear-gradient(180deg, rgba(13,31,23,0.95) 0%, transparent 100%);
-  backdrop-filter: blur(8px);
-  transition: all 0.3s ease;
+position: fixed;
+top: 0; left: 0; right: 0;
+z-index: 100;
+padding: 16px 32px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+background: linear-gradient(180deg, rgba(13,31,23,0.95) 0%, transparent 100%);
+backdrop-filter: blur(8px);
+transition: all 0.3s ease;
 }
 .nav.scrolled {
-  background: rgba(13,31,23,0.97);
-  border-bottom: 1px solid rgba(74,124,89,0.2);
-  padding: 12px 32px;
+background: rgba(13,31,23,0.97);
+border-bottom: 1px solid rgba(74,124,89,0.2);
+padding: 12px 32px;
 }
 .nav-logo {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: var(--cream);
-  letter-spacing: -0.02em;
+font-family: ‘Playfair Display’, serif;
+font-size: 1.2rem;
+font-weight: 700;
+color: var(–cream);
+letter-spacing: -0.02em;
 }
-.nav-logo span { color: var(--burnt); }
+.nav-logo span { color: var(–burnt); }
 .nav-links {
-  display: flex;
-  gap: 8px;
-  list-style: none;
-  flex-wrap: wrap;
+display: flex;
+gap: 8px;
+list-style: none;
+flex-wrap: wrap;
 }
 .nav-links a {
-  font-family: 'Space Mono', monospace;
-  font-size: 0.65rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--smoke);
-  text-decoration: none;
-  padding: 6px 12px;
-  border-radius: 2px;
-  transition: all 0.2s ease;
-  border: 1px solid transparent;
+font-family: ‘Space Mono’, monospace;
+font-size: 0.65rem;
+letter-spacing: 0.15em;
+text-transform: uppercase;
+color: var(–smoke);
+text-decoration: none;
+padding: 6px 12px;
+border-radius: 2px;
+transition: all 0.2s ease;
+border: 1px solid transparent;
 }
 .nav-links a:hover {
-  color: var(--gold);
-  border-color: rgba(212,168,67,0.3);
-  background: rgba(212,168,67,0.05);
+color: var(–gold);
+border-color: rgba(212,168,67,0.3);
+background: rgba(212,168,67,0.05);
 }
 
 /* PROGRESS BAR */
 .progress-bar {
-  position: fixed;
-  top: 0; left: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--leaf), var(--gold), var(--amber));
-  z-index: 200;
-  transition: width 0.1s ease;
+position: fixed;
+top: 0; left: 0;
+height: 3px;
+background: linear-gradient(90deg, var(–leaf), var(–gold), var(–amber));
+z-index: 200;
+transition: width 0.1s ease;
 }
 
 /* MAIN CONTENT */
 .main-content {
-  position: relative;
-  z-index: 1;
+position: relative;
+z-index: 1;
 }
 
 /* SECTION DIVIDER */
 .section-divider {
-  width: 100%;
-  height: 120px;
-  position: relative;
-  overflow: hidden;
+width: 100%;
+height: 120px;
+position: relative;
+overflow: hidden;
 }
 .section-divider svg { width: 100%; height: 100%; }
 
 /* INTRO SECTION */
 .intro-section {
-  background: linear-gradient(180deg, var(--deep) 0%, var(--forest) 100%);
-  padding: 80px 20px;
-  text-align: center;
-  position: relative;
+background: linear-gradient(180deg, var(–deep) 0%, var(–forest) 100%);
+padding: 80px 20px;
+text-align: center;
+position: relative;
 }
 
 .section-badge {
-  display: inline-block;
-  font-family: 'Space Mono', monospace;
-  font-size: 0.65rem;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
-  color: var(--leaf);
-  border: 1px solid var(--leaf);
-  padding: 6px 16px;
-  margin-bottom: 20px;
-  border-radius: 2px;
+display: inline-block;
+font-family: ‘Space Mono’, monospace;
+font-size: 0.65rem;
+letter-spacing: 0.35em;
+text-transform: uppercase;
+color: var(–leaf);
+border: 1px solid var(–leaf);
+padding: 6px 16px;
+margin-bottom: 20px;
+border-radius: 2px;
 }
 
 .intro-section h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  font-weight: 700;
-  color: var(--cream);
-  max-width: 700px;
-  margin: 0 auto 24px;
-  line-height: 1.2;
+font-family: ‘Playfair Display’, serif;
+font-size: clamp(2rem, 5vw, 3.5rem);
+font-weight: 700;
+color: var(–cream);
+max-width: 700px;
+margin: 0 auto 24px;
+line-height: 1.2;
 }
 
 /* Q&A GRID */
 .qa-section {
-  padding: 60px 20px;
-  max-width: 1200px;
-  margin: 0 auto;
+padding: 60px 20px;
+max-width: 1200px;
+margin: 0 auto;
 }
 
 .qa-header {
-  text-align: center;
-  margin-bottom: 60px;
+text-align: center;
+margin-bottom: 60px;
 }
 .qa-header h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2rem, 4vw, 3rem);
-  color: var(--cream);
-  margin-top: 12px;
+font-family: ‘Playfair Display’, serif;
+font-size: clamp(2rem, 4vw, 3rem);
+color: var(–cream);
+margin-top: 12px;
 }
 
 /* QUESTION CARDS */
 .qa-card {
-  background: linear-gradient(135deg, rgba(26,58,42,0.5) 0%, rgba(13,31,23,0.8) 100%);
-  border: 1px solid rgba(106,177,135,0.15);
-  border-radius: 8px;
-  margin-bottom: 32px;
-  overflow: hidden;
-  transition: all 0.4s ease;
-  position: relative;
+background: linear-gradient(135deg, rgba(26,58,42,0.5) 0%, rgba(13,31,23,0.8) 100%);
+border: 1px solid rgba(106,177,135,0.15);
+border-radius: 8px;
+margin-bottom: 32px;
+overflow: hidden;
+transition: all 0.4s ease;
+position: relative;
 }
 .qa-card::before {
-  content: '';
-  position: absolute;
-  left: 0; top: 0; bottom: 0;
-  width: 4px;
-  background: linear-gradient(180deg, var(--leaf), var(--gold));
-  opacity: 0;
-  transition: opacity 0.3s ease;
+content: ‘’;
+position: absolute;
+left: 0; top: 0; bottom: 0;
+width: 4px;
+background: linear-gradient(180deg, var(–leaf), var(–gold));
+opacity: 0;
+transition: opacity 0.3s ease;
 }
 .qa-card:hover {
-  border-color: rgba(106,177,135,0.4);
-  transform: translateX(4px);
-  box-shadow: -8px 0 30px rgba(106,177,135,0.1), 0 8px 30px rgba(0,0,0,0.3);
+border-color: rgba(106,177,135,0.4);
+transform: translateX(4px);
+box-shadow: -8px 0 30px rgba(106,177,135,0.1), 0 8px 30px rgba(0,0,0,0.3);
 }
 .qa-card:hover::before { opacity: 1; }
 
 .qa-card-header {
-  padding: 24px 32px;
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
-  cursor: pointer;
-  user-select: none;
+padding: 24px 32px;
+display: flex;
+align-items: flex-start;
+gap: 20px;
+cursor: pointer;
+user-select: none;
 }
 
 .q-number {
-  font-family: 'Playfair Display', serif;
-  font-size: 3rem;
-  font-weight: 900;
-  color: rgba(106,177,135,0.2);
-  line-height: 1;
-  flex-shrink: 0;
-  transition: color 0.3s ease;
-  min-width: 60px;
+font-family: ‘Playfair Display’, serif;
+font-size: 3rem;
+font-weight: 900;
+color: rgba(106,177,135,0.2);
+line-height: 1;
+flex-shrink: 0;
+transition: color 0.3s ease;
+min-width: 60px;
 }
 .qa-card:hover .q-number,
-.qa-card.open .q-number { color: var(--gold); }
+.qa-card.open .q-number { color: var(–gold); }
 
 .q-text {
-  flex: 1;
+flex: 1;
 }
 .q-text h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(1.1rem, 2vw, 1.4rem);
-  color: var(--cream);
-  font-weight: 700;
-  line-height: 1.4;
-  margin-bottom: 6px;
+font-family: ‘Playfair Display’, serif;
+font-size: clamp(1.1rem, 2vw, 1.4rem);
+color: var(–cream);
+font-weight: 700;
+line-height: 1.4;
+margin-bottom: 6px;
 }
 .q-meta {
-  font-family: 'Space Mono', monospace;
-  font-size: 0.6rem;
-  letter-spacing: 0.2em;
-  color: var(--moss);
-  text-transform: uppercase;
+font-family: ‘Space Mono’, monospace;
+font-size: 0.6rem;
+letter-spacing: 0.2em;
+color: var(–moss);
+text-transform: uppercase;
 }
 
 .q-toggle {
-  flex-shrink: 0;
-  width: 36px; height: 36px;
-  border: 1px solid rgba(106,177,135,0.3);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--leaf);
-  font-size: 1.2rem;
-  transition: all 0.3s ease;
-  background: transparent;
+flex-shrink: 0;
+width: 36px; height: 36px;
+border: 1px solid rgba(106,177,135,0.3);
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+color: var(–leaf);
+font-size: 1.2rem;
+transition: all 0.3s ease;
+background: transparent;
 }
 .qa-card.open .q-toggle {
-  background: var(--leaf);
-  color: var(--deep);
-  transform: rotate(45deg);
+background: var(–leaf);
+color: var(–deep);
+transform: rotate(45deg);
 }
 
 .qa-card-body {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s cubic-bezier(0,1,0,1);
+max-height: 0;
+overflow: hidden;
+transition: max-height 0.5s cubic-bezier(0,1,0,1);
 }
 .qa-card.open .qa-card-body {
-  max-height: 3000px;
-  transition: max-height 1s ease;
+max-height: 3000px;
+transition: max-height 1s ease;
 }
 
 .qa-card-inner {
-  padding: 0 32px 32px 112px;
-  border-top: 1px solid rgba(106,177,135,0.1);
-  padding-top: 24px;
+padding: 0 32px 32px 112px;
+border-top: 1px solid rgba(106,177,135,0.1);
+padding-top: 24px;
 }
 
 /* IMAGE PLACEHOLDER */
 .image-slot {
-  width: 100%;
-  aspect-ratio: 16/7;
-  background: linear-gradient(135deg, rgba(26,58,42,0.6) 0%, rgba(45,90,61,0.3) 100%);
-  border: 2px dashed rgba(106,177,135,0.3);
-  border-radius: 6px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 24px;
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  transition: all 0.3s ease;
+width: 100%;
+background: linear-gradient(135deg, rgba(26,58,42,0.6) 0%, rgba(45,90,61,0.3) 100%);
+border: 2px dashed rgba(106,177,135,0.3);
+border-radius: 6px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+margin-bottom: 24px;
+position: relative;
+overflow: hidden;
+cursor: pointer;
+transition: all 0.3s ease;
 }
 .image-slot:hover {
-  border-color: var(--leaf);
-  background: rgba(26,58,42,0.8);
+border-color: var(–leaf);
+background: rgba(26,58,42,0.8);
 }
 .image-slot .slot-icon {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-  opacity: 0.5;
+font-size: 2.5rem;
+margin-bottom: 10px;
+opacity: 0.5;
 }
 .image-slot .slot-label {
-  font-family: 'Space Mono', monospace;
-  font-size: 0.65rem;
-  letter-spacing: 0.25em;
-  color: var(--leaf);
-  text-transform: uppercase;
-  margin-bottom: 6px;
+font-family: ‘Space Mono’, monospace;
+font-size: 0.65rem;
+letter-spacing: 0.25em;
+color: var(–leaf);
+text-transform: uppercase;
+margin-bottom: 6px;
 }
 .image-slot .slot-hint {
-  font-family: 'Lora', serif;
-  font-size: 0.8rem;
-  color: var(--smoke);
-  font-style: italic;
-  text-align: center;
-  padding: 0 20px;
+font-family: ‘Lora’, serif;
+font-size: 0.8rem;
+color: var(–smoke);
+font-style: italic;
+text-align: center;
+padding: 0 20px;
 }
-.image-slot input[type="text"] {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  cursor: pointer;
-  width: 100%;
-  height: 100%;
-}
-.image-preview {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 6px;
-  display: none;
-}
-.image-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.5);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Space Mono', monospace;
-  font-size: 0.65rem;
-  color: white;
-  letter-spacing: 0.2em;
-  cursor: pointer;
-}
-.image-slot:hover .image-overlay { display: flex; }
 
-/* Image URL paste modal */
-.img-modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.8);
-  z-index: 500;
-  align-items: center;
-  justify-content: center;
+/* Gambar tampil penuh tanpa crop */
+.image-preview {
+display: block !important;
+width: 100%;
+height: auto;
+object-fit: fill;
+border-radius: 6px;
+position: static;
 }
-.img-modal.active { display: flex; }
-.img-modal-box {
-  background: var(--forest);
-  border: 1px solid var(--leaf);
-  border-radius: 8px;
-  padding: 32px;
-  max-width: 480px;
-  width: 90%;
+
+/* Caption */
+.image-caption {
+width: 100%;
+padding: 8px 16px;
+font-family: ‘Space Mono’, monospace;
+font-size: 0.6rem;
+letter-spacing: 0.15em;
+color: var(–smoke);
+text-align: center;
+text-transform: uppercase;
+background: rgba(13,31,23,0.6);
+border-top: 1px solid rgba(106,177,135,0.1);
 }
-.img-modal-box h4 {
-  font-family: 'Playfair Display', serif;
-  color: var(--cream);
-  margin-bottom: 16px;
-  font-size: 1.2rem;
-}
-.img-modal-box input {
-  width: 100%;
-  background: rgba(0,0,0,0.4);
-  border: 1px solid rgba(106,177,135,0.3);
-  border-radius: 4px;
-  padding: 12px 16px;
-  color: var(--cream);
-  font-family: 'Space Mono', monospace;
-  font-size: 0.8rem;
-  margin-bottom: 16px;
-  outline: none;
-}
-.img-modal-box input:focus { border-color: var(--leaf); }
-.modal-btns { display: flex; gap: 12px; }
-.btn-apply {
-  flex: 1;
-  background: var(--leaf);
-  color: var(--deep);
-  border: none;
-  padding: 10px;
-  font-family: 'Space Mono', monospace;
-  font-size: 0.7rem;
-  letter-spacing: 0.1em;
-  cursor: pointer;
-  border-radius: 4px;
-  font-weight: 700;
-  transition: all 0.2s ease;
-}
-.btn-apply:hover { background: var(--light-leaf); }
-.btn-cancel {
-  flex: 1;
-  background: transparent;
-  color: var(--smoke);
-  border: 1px solid rgba(255,255,255,0.2);
-  padding: 10px;
-  font-family: 'Space Mono', monospace;
-  font-size: 0.7rem;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: all 0.2s ease;
-}
-.btn-cancel:hover { border-color: var(--smoke); }
+
+.image-overlay { display: none !important; }
 
 /* ANSWER CONTENT STYLING */
 .answer-content p {
-  font-size: 1rem;
-  line-height: 1.85;
-  color: var(--smoke);
-  margin-bottom: 20px;
+font-size: 1rem;
+line-height: 1.85;
+color: var(–smoke);
+margin-bottom: 20px;
 }
 .answer-content p strong {
-  color: var(--cream);
-  font-weight: 600;
+color: var(–cream);
+font-weight: 600;
 }
 .answer-content h4 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.2rem;
-  color: var(--gold);
-  margin: 28px 0 12px;
+font-family: ‘Playfair Display’, serif;
+font-size: 1.2rem;
+color: var(–gold);
+margin: 28px 0 12px;
 }
 
 .highlight-box {
-  background: linear-gradient(135deg, rgba(212,168,67,0.1) 0%, rgba(26,58,42,0.4) 100%);
-  border-left: 3px solid var(--gold);
-  padding: 20px 24px;
-  margin: 20px 0;
-  border-radius: 0 6px 6px 0;
+background: linear-gradient(135deg, rgba(212,168,67,0.1) 0%, rgba(26,58,42,0.4) 100%);
+border-left: 3px solid var(–gold);
+padding: 20px 24px;
+margin: 20px 0;
+border-radius: 0 6px 6px 0;
 }
 .highlight-box p {
-  color: var(--parchment) !important;
-  font-style: italic;
-  margin: 0 !important;
-  font-size: 1rem !important;
+color: var(–parchment) !important;
+font-style: italic;
+margin: 0 !important;
+font-size: 1rem !important;
 }
 
 .fact-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 16px;
-  margin: 20px 0;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 16px;
+margin: 20px 0;
 }
 .fact-card {
-  background: rgba(26,58,42,0.6);
-  border: 1px solid rgba(106,177,135,0.2);
-  border-radius: 6px;
-  padding: 20px;
-  text-align: center;
-  transition: all 0.3s ease;
+background: rgba(26,58,42,0.6);
+border: 1px solid rgba(106,177,135,0.2);
+border-radius: 6px;
+padding: 20px;
+text-align: center;
+transition: all 0.3s ease;
 }
 .fact-card:hover {
-  border-color: var(--leaf);
-  transform: translateY(-3px);
+border-color: var(–leaf);
+transform: translateY(-3px);
 }
 .fact-num {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: var(--amber);
-  display: block;
-  margin-bottom: 6px;
+font-family: ‘Playfair Display’, serif;
+font-size: 1.8rem;
+font-weight: 700;
+color: var(–amber);
+display: block;
+margin-bottom: 6px;
 }
 .fact-label {
-  font-family: 'Space Mono', monospace;
-  font-size: 0.65rem;
-  color: var(--smoke);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  line-height: 1.4;
+font-family: ‘Space Mono’, monospace;
+font-size: 0.65rem;
+color: var(–smoke);
+letter-spacing: 0.1em;
+text-transform: uppercase;
+line-height: 1.4;
 }
 
 .cause-list, .impact-list, .solution-list {
-  list-style: none;
-  margin: 16px 0;
+list-style: none;
+margin: 16px 0;
 }
 .cause-list li, .impact-list li, .solution-list li {
-  display: flex;
-  gap: 14px;
-  align-items: flex-start;
-  padding: 14px 0;
-  border-bottom: 1px solid rgba(106,177,135,0.1);
-  font-size: 0.95rem;
-  line-height: 1.7;
-  color: var(--smoke);
+display: flex;
+gap: 14px;
+align-items: flex-start;
+padding: 14px 0;
+border-bottom: 1px solid rgba(106,177,135,0.1);
+font-size: 0.95rem;
+line-height: 1.7;
+color: var(–smoke);
 }
 .cause-list li:last-child, .impact-list li:last-child, .solution-list li:last-child { border-bottom: none; }
 .li-icon {
-  width: 28px; height: 28px;
-  border-radius: 50%;
-  background: rgba(106,177,135,0.15);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  font-size: 0.9rem;
-  margin-top: 2px;
+width: 28px; height: 28px;
+border-radius: 50%;
+background: rgba(106,177,135,0.15);
+display: flex;
+align-items: center;
+justify-content: center;
+flex-shrink: 0;
+font-size: 0.9rem;
+margin-top: 2px;
 }
-.li-text strong { color: var(--cream); }
+.li-text strong { color: var(–cream); }
 
 .source-bar {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-top: 24px;
-  padding-top: 20px;
-  border-top: 1px solid rgba(106,177,135,0.1);
+display: flex;
+gap: 10px;
+flex-wrap: wrap;
+margin-top: 24px;
+padding-top: 20px;
+border-top: 1px solid rgba(106,177,135,0.1);
 }
 .source-chip {
-  font-family: 'Space Mono', monospace;
-  font-size: 0.58rem;
-  letter-spacing: 0.1em;
-  color: var(--moss);
-  background: rgba(74,124,89,0.1);
-  border: 1px solid rgba(74,124,89,0.2);
-  padding: 4px 10px;
-  border-radius: 2px;
-  text-transform: uppercase;
+font-family: ‘Space Mono’, monospace;
+font-size: 0.58rem;
+letter-spacing: 0.1em;
+color: var(–moss);
+background: rgba(74,124,89,0.1);
+border: 1px solid rgba(74,124,89,0.2);
+padding: 4px 10px;
+border-radius: 2px;
+text-transform: uppercase;
 }
 
 /* TIMELINE COMPONENT */
 .timeline {
-  position: relative;
-  padding-left: 28px;
-  margin: 20px 0;
+position: relative;
+padding-left: 28px;
+margin: 20px 0;
 }
 .timeline::before {
-  content: '';
-  position: absolute;
-  left: 8px; top: 0; bottom: 0;
-  width: 2px;
-  background: linear-gradient(180deg, var(--leaf), transparent);
+content: ‘’;
+position: absolute;
+left: 8px; top: 0; bottom: 0;
+width: 2px;
+background: linear-gradient(180deg, var(–leaf), transparent);
 }
 .timeline-item {
-  position: relative;
-  padding: 0 0 24px 24px;
+position: relative;
+padding: 0 0 24px 24px;
 }
 .timeline-item::before {
-  content: '';
-  position: absolute;
-  left: -20px; top: 6px;
-  width: 10px; height: 10px;
-  border-radius: 50%;
-  background: var(--leaf);
-  border: 2px solid var(--deep);
+content: ‘’;
+position: absolute;
+left: -20px; top: 6px;
+width: 10px; height: 10px;
+border-radius: 50%;
+background: var(–leaf);
+border: 2px solid var(–deep);
 }
 .timeline-year {
-  font-family: 'Space Mono', monospace;
-  font-size: 0.7rem;
-  color: var(--gold);
-  letter-spacing: 0.1em;
-  margin-bottom: 4px;
+font-family: ‘Space Mono’, monospace;
+font-size: 0.7rem;
+color: var(–gold);
+letter-spacing: 0.1em;
+margin-bottom: 4px;
 }
 .timeline-text {
-  font-size: 0.9rem;
-  color: var(--smoke);
-  line-height: 1.6;
+font-size: 0.9rem;
+color: var(–smoke);
+line-height: 1.6;
 }
-.timeline-text strong { color: var(--cream); }
+.timeline-text strong { color: var(–cream); }
 
 /* MAP CALLOUT */
 .map-regions {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 16px;
-  margin: 20px 0;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+gap: 16px;
+margin: 20px 0;
 }
 .region-card {
-  background: rgba(13,31,23,0.7);
-  border: 1px solid rgba(106,177,135,0.15);
-  border-radius: 6px;
-  padding: 18px;
-  transition: all 0.3s ease;
+background: rgba(13,31,23,0.7);
+border: 1px solid rgba(106,177,135,0.15);
+border-radius: 6px;
+padding: 18px;
+transition: all 0.3s ease;
 }
 .region-card:hover {
-  border-color: rgba(106,177,135,0.4);
-  background: rgba(26,58,42,0.5);
+border-color: rgba(106,177,135,0.4);
+background: rgba(26,58,42,0.5);
 }
 .region-flag { font-size: 1.5rem; margin-bottom: 8px; }
 .region-name {
-  font-family: 'Playfair Display', serif;
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--cream);
-  margin-bottom: 6px;
+font-family: ‘Playfair Display’, serif;
+font-size: 1rem;
+font-weight: 700;
+color: var(–cream);
+margin-bottom: 6px;
 }
 .region-rate {
-  font-family: 'Space Mono', monospace;
-  font-size: 0.65rem;
-  color: var(--amber);
-  letter-spacing: 0.1em;
-  margin-bottom: 8px;
+font-family: ‘Space Mono’, monospace;
+font-size: 0.65rem;
+color: var(–amber);
+letter-spacing: 0.1em;
+margin-bottom: 8px;
 }
-.region-desc { font-size: 0.8rem; color: var(--smoke); line-height: 1.5; }
+.region-desc { font-size: 0.8rem; color: var(–smoke); line-height: 1.5; }
 
 /* Progress bar component */
 .impact-bar-wrap { margin: 12px 0; }
 .impact-bar-label {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 6px;
-  font-size: 0.8rem;
-  color: var(--smoke);
-  font-family: 'Space Mono', monospace;
+display: flex;
+justify-content: space-between;
+margin-bottom: 6px;
+font-size: 0.8rem;
+color: var(–smoke);
+font-family: ‘Space Mono’, monospace;
 }
-.impact-bar-label span:last-child { color: var(--amber); }
+.impact-bar-label span:last-child { color: var(–amber); }
 .impact-bar-track {
-  height: 6px;
-  background: rgba(255,255,255,0.07);
-  border-radius: 3px;
-  overflow: hidden;
+height: 6px;
+background: rgba(255,255,255,0.07);
+border-radius: 3px;
+overflow: hidden;
 }
 .impact-bar-fill {
-  height: 100%;
-  border-radius: 3px;
-  background: linear-gradient(90deg, var(--leaf), var(--amber));
-  width: 0%;
-  transition: width 1.5s ease 0.3s;
+height: 100%;
+border-radius: 3px;
+background: linear-gradient(90deg, var(–leaf), var(–amber));
+width: 0%;
+transition: width 1.5s ease 0.3s;
 }
 
 /* FOOTER */
 footer {
-  background: var(--deep);
-  border-top: 1px solid rgba(106,177,135,0.15);
-  padding: 60px 32px 40px;
-  text-align: center;
+background: var(–deep);
+border-top: 1px solid rgba(106,177,135,0.15);
+padding: 60px 32px 40px;
+text-align: center;
 }
 .footer-logo {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
-  font-weight: 900;
-  color: var(--cream);
-  margin-bottom: 16px;
+font-family: ‘Playfair Display’, serif;
+font-size: 2.5rem;
+font-weight: 900;
+color: var(–cream);
+margin-bottom: 16px;
 }
-.footer-logo span { color: var(--burnt); }
+.footer-logo span { color: var(–burnt); }
 .footer-text {
-  font-size: 0.85rem;
-  color: var(--moss);
-  line-height: 1.7;
-  max-width: 500px;
-  margin: 0 auto 32px;
+font-size: 0.85rem;
+color: var(–moss);
+line-height: 1.7;
+max-width: 500px;
+margin: 0 auto 32px;
 }
 .footer-refs {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: 32px;
+display: flex;
+gap: 12px;
+justify-content: center;
+flex-wrap: wrap;
+margin-bottom: 32px;
 }
 .footer-ref {
-  font-family: 'Space Mono', monospace;
-  font-size: 0.6rem;
-  color: var(--moss);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  padding: 6px 14px;
-  border: 1px solid rgba(74,124,89,0.3);
-  border-radius: 2px;
+font-family: ‘Space Mono’, monospace;
+font-size: 0.6rem;
+color: var(–moss);
+letter-spacing: 0.1em;
+text-transform: uppercase;
+padding: 6px 14px;
+border: 1px solid rgba(74,124,89,0.3);
+border-radius: 2px;
 }
 .footer-copy {
-  font-family: 'Space Mono', monospace;
-  font-size: 0.6rem;
-  color: rgba(184,196,187,0.3);
-  letter-spacing: 0.15em;
+font-family: ‘Space Mono’, monospace;
+font-size: 0.6rem;
+color: rgba(184,196,187,0.3);
+letter-spacing: 0.15em;
 }
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
-  .nav-links { display: none; }
-  .qa-card-inner { padding: 0 20px 24px; padding-top: 20px; }
-  .qa-card-header { padding: 20px; }
-  .q-number { font-size: 2rem; min-width: 40px; }
-  .hero-stats { gap: 16px; }
-  .stat-item { padding: 14px 18px; }
-  .fact-grid { grid-template-columns: repeat(2, 1fr); }
+.nav-links { display: none; }
+.qa-card-inner { padding: 0 20px 24px; padding-top: 20px; }
+.qa-card-header { padding: 20px; }
+.q-number { font-size: 2rem; min-width: 40px; }
+.hero-stats { gap: 16px; }
+.stat-item { padding: 14px 18px; }
+.fact-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* SCROLL ANIMATIONS */
 .reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+opacity: 0;
+transform: translateY(40px);
+transition: opacity 0.7s ease, transform 0.7s ease;
 }
 .reveal.visible {
-  opacity: 1;
-  transform: none;
+opacity: 1;
+transform: none;
 }
 
 /* ACTIVE SECTION IN NAV */
-.nav-links a.active { color: var(--gold); }
+.nav-links a.active { color: var(–gold); }
 
 /* TICKER */
 .ticker-wrap {
-  background: var(--canopy);
-  padding: 12px 0;
-  overflow: hidden;
-  border-top: 1px solid rgba(106,177,135,0.3);
-  border-bottom: 1px solid rgba(106,177,135,0.3);
+background: var(–canopy);
+padding: 12px 0;
+overflow: hidden;
+border-top: 1px solid rgba(106,177,135,0.3);
+border-bottom: 1px solid rgba(106,177,135,0.3);
 }
 .ticker-inner {
-  display: flex;
-  gap: 0;
-  white-space: nowrap;
-  animation: ticker 30s linear infinite;
+display: flex;
+gap: 0;
+white-space: nowrap;
+animation: ticker 30s linear infinite;
 }
 @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 .ticker-item {
-  font-family: 'Space Mono', monospace;
-  font-size: 0.65rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--parchment);
-  padding: 0 40px;
+font-family: ‘Space Mono’, monospace;
+font-size: 0.65rem;
+letter-spacing: 0.15em;
+text-transform: uppercase;
+color: var(–parchment);
+padding: 0 40px;
 }
-.ticker-item span { color: var(--amber); margin-right: 8px; }
+.ticker-item span { color: var(–amber); margin-right: 8px; }
 
 /* FOREST LOSS COUNTER */
 .live-counter {
-  text-align: center;
-  padding: 60px 20px;
-  background: linear-gradient(135deg, rgba(192,57,43,0.1) 0%, rgba(13,31,23,0.9) 100%);
-  border-top: 1px solid rgba(192,57,43,0.2);
-  border-bottom: 1px solid rgba(192,57,43,0.2);
+text-align: center;
+padding: 60px 20px;
+background: linear-gradient(135deg, rgba(192,57,43,0.1) 0%, rgba(13,31,23,0.9) 100%);
+border-top: 1px solid rgba(192,57,43,0.2);
+border-bottom: 1px solid rgba(192,57,43,0.2);
 }
 .counter-label {
-  font-family: 'Space Mono', monospace;
-  font-size: 0.7rem;
-  letter-spacing: 0.3em;
-  color: var(--burnt);
-  text-transform: uppercase;
-  margin-bottom: 12px;
+font-family: ‘Space Mono’, monospace;
+font-size: 0.7rem;
+letter-spacing: 0.3em;
+color: var(–burnt);
+text-transform: uppercase;
+margin-bottom: 12px;
 }
 .counter-num {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2.5rem, 8vw, 5rem);
-  font-weight: 900;
-  color: var(--burnt);
-  font-variant-numeric: tabular-nums;
+font-family: ‘Playfair Display’, serif;
+font-size: clamp(2.5rem, 8vw, 5rem);
+font-weight: 900;
+color: var(–burnt);
+font-variant-numeric: tabular-nums;
 }
 .counter-unit {
-  font-family: 'Space Mono', monospace;
-  font-size: 0.75rem;
-  color: var(--smoke);
-  letter-spacing: 0.2em;
-  margin-top: 8px;
+font-family: ‘Space Mono’, monospace;
+font-size: 0.75rem;
+color: var(–smoke);
+letter-spacing: 0.2em;
+margin-top: 8px;
 }
 
 /* TABS */
 .tabs {
-  display: flex;
-  gap: 4px;
-  margin-bottom: 20px;
-  flex-wrap: wrap;
+display: flex;
+gap: 4px;
+margin-bottom: 20px;
+flex-wrap: wrap;
 }
 .tab-btn {
-  font-family: 'Space Mono', monospace;
-  font-size: 0.65rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--smoke);
-  background: transparent;
-  border: 1px solid rgba(106,177,135,0.2);
-  padding: 8px 16px;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: all 0.2s ease;
+font-family: ‘Space Mono’, monospace;
+font-size: 0.65rem;
+letter-spacing: 0.1em;
+text-transform: uppercase;
+color: var(–smoke);
+background: transparent;
+border: 1px solid rgba(106,177,135,0.2);
+padding: 8px 16px;
+cursor: pointer;
+border-radius: 4px;
+transition: all 0.2s ease;
 }
 .tab-btn.active, .tab-btn:hover {
-  background: rgba(106,177,135,0.15);
-  border-color: var(--leaf);
-  color: var(--leaf);
+background: rgba(106,177,135,0.15);
+border-color: var(–leaf);
+color: var(–leaf);
 }
 .tab-panel { display: none; }
 .tab-panel.active { display: block; }
 
 /* BLOCKQUOTE */
 blockquote {
-  border-left: 3px solid var(--amber);
-  padding: 16px 24px;
-  margin: 20px 0;
-  background: rgba(232,133,61,0.07);
-  border-radius: 0 4px 4px 0;
-  font-style: italic;
-  color: var(--parchment);
-  font-size: 1rem;
-  line-height: 1.7;
+border-left: 3px solid var(–amber);
+padding: 16px 24px;
+margin: 20px 0;
+background: rgba(232,133,61,0.07);
+border-radius: 0 4px 4px 0;
+font-style: italic;
+color: var(–parchment);
+font-size: 1rem;
+line-height: 1.7;
 }
 blockquote cite {
-  display: block;
-  margin-top: 10px;
-  font-family: 'Space Mono', monospace;
-  font-size: 0.65rem;
-  letter-spacing: 0.1em;
-  font-style: normal;
-  color: var(--amber);
-  text-transform: uppercase;
+display: block;
+margin-top: 10px;
+font-family: ‘Space Mono’, monospace;
+font-size: 0.65rem;
+letter-spacing: 0.1em;
+font-style: normal;
+color: var(–amber);
+text-transform: uppercase;
 }
 
 /* SVG CHART */
 .chart-wrap {
-  background: rgba(13,31,23,0.7);
-  border: 1px solid rgba(106,177,135,0.15);
-  border-radius: 8px;
-  padding: 24px;
-  margin: 20px 0;
+background: rgba(13,31,23,0.7);
+border: 1px solid rgba(106,177,135,0.15);
+border-radius: 8px;
+padding: 24px;
+margin: 20px 0;
 }
 .chart-title {
-  font-family: 'Space Mono', monospace;
-  font-size: 0.65rem;
-  letter-spacing: 0.2em;
-  color: var(--leaf);
-  text-transform: uppercase;
-  margin-bottom: 16px;
+font-family: ‘Space Mono’, monospace;
+font-size: 0.65rem;
+letter-spacing: 0.2em;
+color: var(–leaf);
+text-transform: uppercase;
+margin-bottom: 16px;
 }
 .chart-svg { width: 100%; height: 160px; }
 
@@ -1018,22 +945,11 @@ blockquote cite {
 <body>
 
 <!-- PROGRESS BAR -->
+
 <div class="progress-bar" id="progressBar"></div>
 
-<!-- IMAGE MODAL -->
-<div class="img-modal" id="imgModal">
-  <div class="img-modal-box">
-    <h4>🖼️ Tambahkan Gambar</h4>
-    <p style="font-size:0.8rem;color:var(--smoke);margin-bottom:14px;">Paste URL gambar dari WordPress atau sumber lain</p>
-    <input type="text" id="imgUrlInput" placeholder="https://example.com/gambar.jpg">
-    <div class="modal-btns">
-      <button class="btn-apply" onclick="applyImage()">✓ Terapkan</button>
-      <button class="btn-cancel" onclick="closeModal()">Batal</button>
-    </div>
-  </div>
-</div>
-
 <!-- NAVIGATION -->
+
 <nav class="nav" id="mainNav">
   <div class="nav-logo">Defo<span>restasi</span></div>
   <ul class="nav-links">
@@ -1048,13 +964,10 @@ blockquote cite {
 </nav>
 
 <!-- HERO -->
+
 <section class="hero" id="hero">
   <div class="hero-bg"></div>
-
-  <!-- Fireflies -->
   <div class="fireflies" id="fireflies"></div>
-
-  <!-- Trees -->
   <div class="trees-container" id="treesContainer"></div>
 
   <div class="hero-content">
@@ -1090,6 +1003,7 @@ blockquote cite {
 </section>
 
 <!-- TICKER -->
+
 <div class="ticker-wrap">
   <div class="ticker-inner" id="ticker">
     <span class="ticker-item"><span>🌳</span>Setiap menit, 40 lapangan bola hutan hilang</span>
@@ -1108,6 +1022,7 @@ blockquote cite {
 </div>
 
 <!-- LIVE COUNTER -->
+
 <div class="live-counter">
   <div class="counter-label">⏱️ Hutan yang Hilang Sejak Anda Membuka Halaman Ini</div>
   <div class="counter-num" id="liveCounter">0</div>
@@ -1115,6 +1030,7 @@ blockquote cite {
 </div>
 
 <!-- MAIN Q&A CONTENT -->
+
 <div class="main-content">
   <section class="qa-section">
     <div class="qa-header reveal">
@@ -1122,910 +1038,892 @@ blockquote cite {
       <h2>Mengenal Deforestasi Secara Mendalam</h2>
     </div>
 
-    <!-- Q1 -->
-    <div class="qa-card reveal" id="q1">
-      <div class="qa-card-header" onclick="toggleCard(this)">
-        <div class="q-number">01</div>
-        <div class="q-text">
-          <h3>Apa sesungguhnya makna deforestasi itu?</h3>
-          <div class="q-meta">Definisi & Konsep Dasar</div>
-        </div>
-        <div class="q-toggle">+</div>
+```
+<!-- Q1 -->
+<div class="qa-card reveal" id="q1">
+  <div class="qa-card-header" onclick="toggleCard(this)">
+    <div class="q-number">01</div>
+    <div class="q-text">
+      <h3>Apa sesungguhnya makna deforestasi itu?</h3>
+      <div class="q-meta">Definisi & Konsep Dasar</div>
+    </div>
+    <div class="q-toggle">+</div>
+  </div>
+  <div class="qa-card-body">
+    <div class="qa-card-inner">
+
+      <div class="image-slot active-img" data-slot="q1">
+        <img class="image-preview" src="https://yaffblog.wordpress.com/wp-content/uploads/2026/05/img_1421.jpeg" alt="Foto Ilustrasi Deforestasi">
+        <div class="image-caption">Ilustrasi kondisi hutan yang mengalami deforestasi</div>
+        <div class="image-overlay">GANTI GAMBAR</div>
       </div>
-      <div class="qa-card-body">
-        <div class="qa-card-inner">
 
-          <div class="image-slot active-img" data-slot="q1">
-            <img class="image-preview" src="https://yaffblog.wordpress.com/wp-content/uploads/2026/05/img_1421.jpeg" alt="Foto Ilustrasi Deforestasi" style="display:block;">
-            <div class="image-caption">Ilustrasi kondisi hutan yang mengalami deforestasi</div>
-            <div class="image-overlay" onclick="openModal(this.parentElement)">GANTI GAMBAR</div>
-          </div>
+      <div class="answer-content">
+        <p><strong>Deforestasi</strong> (dari bahasa Latin: <em>de</em> = penghilangan + <em>forestis</em> = hutan) adalah <strong>proses pengurangan atau penghapusan tutupan hutan secara permanen</strong> dari suatu kawasan, baik akibat aktivitas manusia maupun faktor alam, yang mengakibatkan lahan tersebut berubah fungsi menjadi bukan-hutan.</p>
 
-          <div class="answer-content">
-            <p><strong>Deforestasi</strong> (dari bahasa Latin: <em>de</em> = penghilangan + <em>forestis</em> = hutan) adalah <strong>proses pengurangan atau penghapusan tutupan hutan secara permanen</strong> dari suatu kawasan, baik akibat aktivitas manusia maupun faktor alam, yang mengakibatkan lahan tersebut berubah fungsi menjadi bukan-hutan.</p>
+        <div class="highlight-box">
+          <p>"Deforestasi bukan sekadar penebangan pohon — ia adalah penghancuran ekosistem kompleks yang telah terbentuk selama ribuan tahun, beserta seluruh jaring kehidupan yang bergantung padanya."</p>
+        </div>
 
-            <div class="highlight-box">
-              <p>"Deforestasi bukan sekadar penebangan pohon — ia adalah penghancuran ekosistem kompleks yang telah terbentuk selama ribuan tahun, beserta seluruh jaring kehidupan yang bergantung padanya."</p>
+        <h4>Definisi Resmi & Akademis</h4>
+        <p>Menurut <strong>FAO (Food and Agriculture Organization, 2020)</strong>, deforestasi didefinisikan sebagai <em>"konversi hutan ke penggunaan lahan lain atau pengurangan tutupan tajuk hutan di bawah 10% secara jangka panjang"</em>. Sementara <strong>KLHK (Kementerian Lingkungan Hidup dan Kehutanan Indonesia)</strong> mendefinisikannya sebagai perubahan kondisi penutupan lahan dari kelas hutan ke bukan-hutan.</p>
+
+        <div class="tabs">
+          <button class="tab-btn active" onclick="switchTab(this, 'def-types')">Jenis Deforestasi</button>
+          <button class="tab-btn" onclick="switchTab(this, 'def-vs')">Deforestasi vs Degradasi</button>
+          <button class="tab-btn" onclick="switchTab(this, 'def-scale')">Skala & Ukuran</button>
+        </div>
+
+        <div class="tab-panel active" id="def-types">
+          <ul class="cause-list">
+            <li><div class="li-icon">🪓</div><div class="li-text"><strong>Deforestasi Langsung:</strong> Penebangan total pohon secara serentak, biasanya untuk konversi lahan pertanian atau perkebunan besar.</div></li>
+            <li><div class="li-icon">🔥</div><div class="li-text"><strong>Deforestasi oleh Kebakaran:</strong> Pembakaran hutan yang disengaja atau tidak, meninggalkan lahan gundul dalam waktu singkat.</div></li>
+            <li><div class="li-icon">🏗️</div><div class="li-text"><strong>Deforestasi Infrastruktur:</strong> Pembangunan jalan, bendungan, pemukiman, dan tambang yang memotong dan menghancurkan kawasan hutan.</div></li>
+            <li><div class="li-icon">🌾</div><div class="li-text"><strong>Deforestasi Bertahap:</strong> Penggundulan secara perlahan oleh masyarakat sekitar hutan untuk ladang berpindah atau penggembalaan ternak.</div></li>
+          </ul>
+        </div>
+
+        <div class="tab-panel" id="def-vs">
+          <p>Penting untuk membedakan <strong>deforestasi</strong> dan <strong>degradasi hutan</strong>:</p>
+          <div class="fact-grid">
+            <div class="fact-card">
+              <span class="fact-num">🌲→🏜️</span>
+              <span class="fact-label">Deforestasi: Hutan berubah menjadi BUKAN hutan (permanen)</span>
             </div>
-
-            <h4>Definisi Resmi & Akademis</h4>
-            <p>Menurut <strong>FAO (Food and Agriculture Organization, 2020)</strong>, deforestasi didefinisikan sebagai <em>"konversi hutan ke penggunaan lahan lain atau pengurangan tutupan tajuk hutan di bawah 10% secara jangka panjang"</em>. Sementara <strong>KLHK (Kementerian Lingkungan Hidup dan Kehutanan Indonesia)</strong> mendefinisikannya sebagai perubahan kondisi penutupan lahan dari kelas hutan ke bukan-hutan.</p>
-
-            <div class="tabs">
-              <button class="tab-btn active" onclick="switchTab(this, 'def-types')">Jenis Deforestasi</button>
-              <button class="tab-btn" onclick="switchTab(this, 'def-vs')">Deforestasi vs Degradasi</button>
-              <button class="tab-btn" onclick="switchTab(this, 'def-scale')">Skala & Ukuran</button>
-            </div>
-
-            <div class="tab-panel active" id="def-types">
-              <ul class="cause-list">
-                <li><div class="li-icon">🪓</div><div class="li-text"><strong>Deforestasi Langsung:</strong> Penebangan total pohon secara serentak, biasanya untuk konversi lahan pertanian atau perkebunan besar.</div></li>
-                <li><div class="li-icon">🔥</div><div class="li-text"><strong>Deforestasi oleh Kebakaran:</strong> Pembakaran hutan yang disengaja atau tidak, meninggalkan lahan gundul dalam waktu singkat.</div></li>
-                <li><div class="li-icon">🏗️</div><div class="li-text"><strong>Deforestasi Infrastruktur:</strong> Pembangunan jalan, bendungan, pemukiman, dan tambang yang memotong dan menghancurkan kawasan hutan.</div></li>
-                <li><div class="li-icon">🌾</div><div class="li-text"><strong>Deforestasi Bertahap:</strong> Penggundulan secara perlahan oleh masyarakat sekitar hutan untuk ladang berpindah atau penggembalaan ternak.</div></li>
-              </ul>
-            </div>
-
-            <div class="tab-panel" id="def-vs">
-              <p>Penting untuk membedakan <strong>deforestasi</strong> dan <strong>degradasi hutan</strong>:</p>
-              <div class="fact-grid">
-                <div class="fact-card">
-                  <span class="fact-num">🌲→🏜️</span>
-                  <span class="fact-label">Deforestasi: Hutan berubah menjadi BUKAN hutan (permanen)</span>
-                </div>
-                <div class="fact-card">
-                  <span class="fact-num">🌲→🌿</span>
-                  <span class="fact-label">Degradasi: Hutan masih ada tapi kualitas & fungsinya menurun drastis</span>
-                </div>
-              </div>
-              <p>Degradasi sering menjadi <em>pendahulu</em> deforestasi — hutan yang terdegradasi lebih rentan ditebang habis.</p>
-            </div>
-
-            <div class="tab-panel" id="def-scale">
-              <div class="fact-grid">
-                <div class="fact-card">
-                  <span class="fact-num">4,7 Jt</span>
-                  <span class="fact-label">km² hutan tropis hilang 2000–2020 (Nature, 2021)</span>
-                </div>
-                <div class="fact-card">
-                  <span class="fact-num">10 Jt</span>
-                  <span class="fact-label">Hektar per tahun hilang (FAO 2020)</span>
-                </div>
-                <div class="fact-card">
-                  <span class="fact-num">1,5 Jt</span>
-                  <span class="fact-label">km² hutan hilang hanya dalam dekade 2010an</span>
-                </div>
-                <div class="fact-card">
-                  <span class="fact-num">27 Ha</span>
-                  <span class="fact-label">Hutan hilang setiap MENIT di seluruh dunia</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="source-bar">
-              <span class="source-chip">FAO Global Forest Resources Assessment 2020</span>
-              <span class="source-chip">KLHK 2023</span>
-              <span class="source-chip">Nature (2021) vol.593</span>
-              <span class="source-chip">IPCC AR6 2022</span>
+            <div class="fact-card">
+              <span class="fact-num">🌲→🌿</span>
+              <span class="fact-label">Degradasi: Hutan masih ada tapi kualitas & fungsinya menurun drastis</span>
             </div>
           </div>
+          <p>Degradasi sering menjadi <em>pendahulu</em> deforestasi — hutan yang terdegradasi lebih rentan ditebang habis.</p>
+        </div>
+
+        <div class="tab-panel" id="def-scale">
+          <div class="fact-grid">
+            <div class="fact-card">
+              <span class="fact-num">4,7 Jt</span>
+              <span class="fact-label">km² hutan tropis hilang 2000–2020 (Nature, 2021)</span>
+            </div>
+            <div class="fact-card">
+              <span class="fact-num">10 Jt</span>
+              <span class="fact-label">Hektar per tahun hilang (FAO 2020)</span>
+            </div>
+            <div class="fact-card">
+              <span class="fact-num">1,5 Jt</span>
+              <span class="fact-label">km² hutan hilang hanya dalam dekade 2010an</span>
+            </div>
+            <div class="fact-card">
+              <span class="fact-num">27 Ha</span>
+              <span class="fact-label">Hutan hilang setiap MENIT di seluruh dunia</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="source-bar">
+          <span class="source-chip">FAO Global Forest Resources Assessment 2020</span>
+          <span class="source-chip">KLHK 2023</span>
+          <span class="source-chip">Nature (2021) vol.593</span>
+          <span class="source-chip">IPCC AR6 2022</span>
         </div>
       </div>
     </div>
+  </div>
+</div>
 
-    <!-- Q2 -->
-    <div class="qa-card reveal" id="q2">
-      <div class="qa-card-header" onclick="toggleCard(this)">
-        <div class="q-number">02</div>
-        <div class="q-text">
-          <h3>Mengapa deforestasi terjadi?</h3>
-          <div class="q-meta">Penyebab & Faktor Pendorong</div>
-        </div>
-        <div class="q-toggle">+</div>
+<!-- Q2 -->
+<div class="qa-card reveal" id="q2">
+  <div class="qa-card-header" onclick="toggleCard(this)">
+    <div class="q-number">02</div>
+    <div class="q-text">
+      <h3>Mengapa deforestasi terjadi?</h3>
+      <div class="q-meta">Penyebab & Faktor Pendorong</div>
+    </div>
+    <div class="q-toggle">+</div>
+  </div>
+  <div class="qa-card-body">
+    <div class="qa-card-inner">
+
+      <div class="image-slot active-img" data-slot="q2">
+        <img class="image-preview" src="https://yaffblog.wordpress.com/wp-content/uploads/2026/05/img_1422.jpeg" alt="Gambar Penyebab Deforestasi">
+        <div class="image-caption">Ekspansi lahan pertanian dan perkebunan sebagai penyebab utama deforestasi</div>
+        <div class="image-overlay">GANTI GAMBAR</div>
       </div>
-      <div class="qa-card-body">
-        <div class="qa-card-inner">
 
-          <div class="image-slot active-img" data-slot="q2">
-            <img class="image-preview" src="https://yaffblog.wordpress.com/wp-content/uploads/2026/05/img_1422.jpeg" alt="Gambar Penyebab Deforestasi" style="display:block;">
-            <div class="image-caption">Ekspansi lahan pertanian dan perkebunan sebagai penyebab utama deforestasi</div>
-            <div class="image-overlay" onclick="openModal(this.parentElement)">GANTI GAMBAR</div>
-          </div>
+      <div class="answer-content">
+        <p>Deforestasi tidak terjadi karena satu sebab tunggal, melainkan hasil dari <strong>kombinasi kompleks antara faktor ekonomi, sosial, kebijakan, dan demografis</strong>. Para ilmuwan membaginya ke dalam dua kategori utama: penyebab langsung dan penyebab tidak langsung.</p>
 
-          <div class="answer-content">
-            <p>Deforestasi tidak terjadi karena satu sebab tunggal, melainkan hasil dari <strong>kombinasi kompleks antara faktor ekonomi, sosial, kebijakan, dan demografis</strong>. Para ilmuwan membaginya ke dalam dua kategori utama: penyebab langsung dan penyebab tidak langsung.</p>
+        <h4>A. Penyebab Langsung (Direct Drivers)</h4>
+        <ul class="cause-list">
+          <li>
+            <div class="li-icon">🌴</div>
+            <div class="li-text"><strong>Ekspansi Pertanian & Perkebunan (70-80% kasus):</strong> Ini adalah penyebab terbesar secara global. Konversi hutan menjadi perkebunan kelapa sawit, kedelai, peternak sapi, dan pertanian skala besar menyumbang mayoritas deforestasi. Di Brazil, 80% deforestasi terkait penggembalaan sapi (Greenpeace, 2019). Di Indonesia, perkebunan sawit jadi pemicu utama.</div>
+          </li>
+          <li>
+            <div class="li-icon">⛏️</div>
+            <div class="li-text"><strong>Pertambangan & Ekstraksi Sumber Daya:</strong> Pertambangan emas, batubara, nikel, dan minyak bumi memerlukan pembukaan lahan luas, serta membangun jalan akses yang membuka hutan terpencil bagi penebang liar.</div>
+          </li>
+          <li>
+            <div class="li-icon">🏘️</div>
+            <div class="li-text"><strong>Pembangunan Infrastruktur:</strong> Jalan, bendungan hidroelektrik, jalur kereta api, dan kawasan industri serta permukiman baru yang terus meluas ke kawasan hutan.</div>
+          </li>
+          <li>
+            <div class="li-icon">🪵</div>
+            <div class="li-text"><strong>Penebangan Kayu Legal & Ilegal:</strong> Industri kayu global dan pembalakan liar (illegal logging) secara langsung membuka tutupan pohon. Penebangan selektif pun melemahkan struktur hutan dan memudahkan kebakaran.</div>
+          </li>
+          <li>
+            <div class="li-icon">🔥</div>
+            <div class="li-text"><strong>Kebakaran Hutan:</strong> Baik yang disengaja untuk membuka lahan (slash-and-burn) maupun dipicu perubahan iklim. Di Indonesia, kebakaran gambut berulang menjadi bencana tahunan.</div>
+          </li>
+        </ul>
 
-            <h4>A. Penyebab Langsung (Direct Drivers)</h4>
-            <ul class="cause-list">
-              <li>
-                <div class="li-icon">🌴</div>
-                <div class="li-text"><strong>Ekspansi Pertanian & Perkebunan (70-80% kasus):</strong> Ini adalah penyebab terbesar secara global. Konversi hutan menjadi perkebunan kelapa sawit, kedelai, peternak sapi, dan pertanian skala besar menyumbang mayoritas deforestasi. Di Brazil, 80% deforestasi terkait penggembalaan sapi (Greenpeace, 2019). Di Indonesia, perkebunan sawit jadi pemicu utama.</div>
-              </li>
-              <li>
-                <div class="li-icon">⛏️</div>
-                <div class="li-text"><strong>Pertambangan & Ekstraksi Sumber Daya:</strong> Pertambangan emas, batubara, nikel, dan minyak bumi memerlukan pembukaan lahan luas, serta membangun jalan akses yang membuka hutan terpencil bagi penebang liar.</div>
-              </li>
-              <li>
-                <div class="li-icon">🏘️</div>
-                <div class="li-text"><strong>Pembangunan Infrastruktur:</strong> Jalan, bendungan hidroelektrik, jalur kereta api, dan kawasan industri serta permukiman baru yang terus meluas ke kawasan hutan.</div>
-              </li>
-              <li>
-                <div class="li-icon">🪵</div>
-                <div class="li-text"><strong>Penebangan Kayu Legal & Ilegal:</strong> Industri kayu global dan pembalakan liar (illegal logging) secara langsung membuka tutupan pohon. Penebangan selektif pun melemahkan struktur hutan dan memudahkan kebakaran.</div>
-              </li>
-              <li>
-                <div class="li-icon">🔥</div>
-                <div class="li-text"><strong>Kebakaran Hutan:</strong> Baik yang disengaja untuk membuka lahan (slash-and-burn) maupun dipicu perubahan iklim. Di Indonesia, kebakaran gambut berulang menjadi bencana tahunan.</div>
-              </li>
-            </ul>
+        <h4>B. Penyebab Tidak Langsung (Underlying Drivers)</h4>
 
-            <h4>B. Penyebab Tidak Langsung (Underlying Drivers)</h4>
-
-            <div class="chart-wrap">
-              <div class="chart-title">Kontribusi Penyebab Deforestasi Tropis Global (%)</div>
-              <div style="display:grid;gap:8px;">
-                <div class="impact-bar-wrap">
-                  <div class="impact-bar-label"><span>Pertanian Komersial</span><span>40%</span></div>
-                  <div class="impact-bar-track"><div class="impact-bar-fill" style="width:40%;background:linear-gradient(90deg,var(--amber),var(--gold))"></div></div>
-                </div>
-                <div class="impact-bar-wrap">
-                  <div class="impact-bar-label"><span>Pertanian Subsisten</span><span>33%</span></div>
-                  <div class="impact-bar-track"><div class="impact-bar-fill" style="width:33%;background:linear-gradient(90deg,var(--leaf),var(--amber))"></div></div>
-                </div>
-                <div class="impact-bar-wrap">
-                  <div class="impact-bar-label"><span>Industri Kayu</span><span>14%</span></div>
-                  <div class="impact-bar-track"><div class="impact-bar-fill" style="width:14%"></div></div>
-                </div>
-                <div class="impact-bar-wrap">
-                  <div class="impact-bar-label"><span>Pembangunan Infrastruktur</span><span>10%</span></div>
-                  <div class="impact-bar-track"><div class="impact-bar-fill" style="width:10%"></div></div>
-                </div>
-                <div class="impact-bar-wrap">
-                  <div class="impact-bar-label"><span>Pertambangan & lainnya</span><span>3%</span></div>
-                  <div class="impact-bar-track"><div class="impact-bar-fill" style="width:3%"></div></div>
-                </div>
-              </div>
+        <div class="chart-wrap">
+          <div class="chart-title">Kontribusi Penyebab Deforestasi Tropis Global (%)</div>
+          <div style="display:grid;gap:8px;">
+            <div class="impact-bar-wrap">
+              <div class="impact-bar-label"><span>Pertanian Komersial</span><span>40%</span></div>
+              <div class="impact-bar-track"><div class="impact-bar-fill" style="width:40%;background:linear-gradient(90deg,var(--amber),var(--gold))"></div></div>
             </div>
-
-            <ul class="cause-list">
-              <li><div class="li-icon">📈</div><div class="li-text"><strong>Pertumbuhan Populasi & Urbanisasi:</strong> Permintaan pangan, kayu, dan lahan meningkat seiring pertumbuhan penduduk global yang diproyeksikan mencapai 9,7 miliar pada 2050 (PBB).</div></li>
-              <li><div class="li-icon">💰</div><div class="li-text"><strong>Kemiskinan & Ketimpangan:</strong> Komunitas miskin di negara berkembang seringkali tidak punya pilihan selain membuka hutan untuk bertahan hidup. Ketimpangan kepemilikan lahan memaksa petani kecil masuk kawasan hutan.</div></li>
-              <li><div class="li-icon">📜</div><div class="li-text"><strong>Kebijakan & Tata Kelola Lemah:</strong> Korupsi, lemahnya penegakan hukum, pemberian konsesi ilegal, dan tidak jelasnya status kepemilikan lahan menciptakan ruang bagi eksploitasi hutan tanpa akuntabilitas.</div></li>
-              <li><div class="li-icon">🌐</div><div class="li-text"><strong>Permintaan Global & Rantai Pasokan:</strong> Konsumsi produk berbasis komoditas (minyak sawit, daging, kedelai, kertas) di negara-negara maju mendorong ekspansi pertanian di negara tropis — fenomena yang disebut "deforestasi impor".</div></li>
-            </ul>
-
-            <blockquote>
-              "Selama dunia masih bersedia membeli produk yang diproduksi di atas lahan bekas hutan, selama itu pula insentif untuk menebang hutan akan terus ada."
-              <cite>— WWF, Hutan Untuk Kehidupan, 2022</cite>
-            </blockquote>
-
-            <div class="source-bar">
-              <span class="source-chip">Greenpeace 2019</span>
-              <span class="source-chip">FAO & UNEP 2020</span>
-              <span class="source-chip">WWF Living Forests Report</span>
-              <span class="source-chip">CIFOR 2021</span>
+            <div class="impact-bar-wrap">
+              <div class="impact-bar-label"><span>Pertanian Subsisten</span><span>33%</span></div>
+              <div class="impact-bar-track"><div class="impact-bar-fill" style="width:33%;background:linear-gradient(90deg,var(--leaf),var(--amber))"></div></div>
+            </div>
+            <div class="impact-bar-wrap">
+              <div class="impact-bar-label"><span>Industri Kayu</span><span>14%</span></div>
+              <div class="impact-bar-track"><div class="impact-bar-fill" style="width:14%"></div></div>
+            </div>
+            <div class="impact-bar-wrap">
+              <div class="impact-bar-label"><span>Pembangunan Infrastruktur</span><span>10%</span></div>
+              <div class="impact-bar-track"><div class="impact-bar-fill" style="width:10%"></div></div>
+            </div>
+            <div class="impact-bar-wrap">
+              <div class="impact-bar-label"><span>Pertambangan & lainnya</span><span>3%</span></div>
+              <div class="impact-bar-track"><div class="impact-bar-fill" style="width:3%"></div></div>
             </div>
           </div>
+        </div>
+
+        <ul class="cause-list">
+          <li><div class="li-icon">📈</div><div class="li-text"><strong>Pertumbuhan Populasi & Urbanisasi:</strong> Permintaan pangan, kayu, dan lahan meningkat seiring pertumbuhan penduduk global yang diproyeksikan mencapai 9,7 miliar pada 2050 (PBB).</div></li>
+          <li><div class="li-icon">💰</div><div class="li-text"><strong>Kemiskinan & Ketimpangan:</strong> Komunitas miskin di negara berkembang seringkali tidak punya pilihan selain membuka hutan untuk bertahan hidup. Ketimpangan kepemilikan lahan memaksa petani kecil masuk kawasan hutan.</div></li>
+          <li><div class="li-icon">📜</div><div class="li-text"><strong>Kebijakan & Tata Kelola Lemah:</strong> Korupsi, lemahnya penegakan hukum, pemberian konsesi ilegal, dan tidak jelasnya status kepemilikan lahan menciptakan ruang bagi eksploitasi hutan tanpa akuntabilitas.</div></li>
+          <li><div class="li-icon">🌐</div><div class="li-text"><strong>Permintaan Global & Rantai Pasokan:</strong> Konsumsi produk berbasis komoditas (minyak sawit, daging, kedelai, kertas) di negara-negara maju mendorong ekspansi pertanian di negara tropis — fenomena yang disebut "deforestasi impor".</div></li>
+        </ul>
+
+        <blockquote>
+          "Selama dunia masih bersedia membeli produk yang diproduksi di atas lahan bekas hutan, selama itu pula insentif untuk menebang hutan akan terus ada."
+          <cite>— WWF, Hutan Untuk Kehidupan, 2022</cite>
+        </blockquote>
+
+        <div class="source-bar">
+          <span class="source-chip">Greenpeace 2019</span>
+          <span class="source-chip">FAO & UNEP 2020</span>
+          <span class="source-chip">WWF Living Forests Report</span>
+          <span class="source-chip">CIFOR 2021</span>
         </div>
       </div>
     </div>
+  </div>
+</div>
 
-    <!-- Q3 -->
-    <div class="qa-card reveal" id="q3">
-      <div class="qa-card-header" onclick="toggleCard(this)">
-        <div class="q-number">03</div>
-        <div class="q-text">
-          <h3>Di manakah terjadi deforestasi? Apakah terjadi di Indonesia juga?</h3>
-          <div class="q-meta">Lokasi Global & Kondisi Indonesia</div>
-        </div>
-        <div class="q-toggle">+</div>
+<!-- Q3 -->
+<div class="qa-card reveal" id="q3">
+  <div class="qa-card-header" onclick="toggleCard(this)">
+    <div class="q-number">03</div>
+    <div class="q-text">
+      <h3>Di manakah terjadi deforestasi? Apakah terjadi di Indonesia juga?</h3>
+      <div class="q-meta">Lokasi Global & Kondisi Indonesia</div>
+    </div>
+    <div class="q-toggle">+</div>
+  </div>
+  <div class="qa-card-body">
+    <div class="qa-card-inner">
+
+      <div class="image-slot active-img" data-slot="q3">
+        <img class="image-preview" src="https://yaffblog.wordpress.com/wp-content/uploads/2026/05/img_1425.jpeg" alt="Peta Deforestasi Indonesia">
+        <div class="image-caption">Peta sebaran deforestasi di Indonesia — Kalimantan, Sumatera, dan Papua paling terdampak</div>
+        <div class="image-overlay">GANTI GAMBAR</div>
       </div>
-      <div class="qa-card-body">
-        <div class="qa-card-inner">
 
-          <div class="image-slot active-img" data-slot="q3">
-            <img class="image-preview" src="https://yaffblog.wordpress.com/wp-content/uploads/2026/05/img_1425.jpeg" alt="Peta Deforestasi Indonesia" style="display:block;">
-            <div class="image-caption">Peta sebaran deforestasi di Indonesia — Kalimantan, Sumatera, dan Papua paling terdampak</div>
-            <div class="image-overlay" onclick="openModal(this.parentElement)">GANTI GAMBAR</div>
+      <div class="answer-content">
+        <p>Deforestasi terjadi di <strong>hampir seluruh wilayah tropis dan subtropis dunia</strong>, namun tingkat keparahannya sangat bervariasi. Hutan tropis yang menjadi sasaran utama karena kekayaan sumber dayanya berada di tiga kawasan besar.</p>
+
+        <h4>Hotspot Deforestasi Dunia</h4>
+        <div class="map-regions">
+          <div class="region-card">
+            <div class="region-flag">🇧🇷</div>
+            <div class="region-name">Amazon, Brazil</div>
+            <div class="region-rate">⚠️ 11.568 km²/tahun (2022)</div>
+            <div class="region-desc">Hutan hujan terbesar di bumi, menyimpan 10% spesies darat. Terancam ekspansi pertanian dan peternakan. Presiden Lula menargetkan deforestasi nol pada 2030.</div>
           </div>
-
-          <div class="answer-content">
-            <p>Deforestasi terjadi di <strong>hampir seluruh wilayah tropis dan subtropis dunia</strong>, namun tingkat keparahannya sangat bervariasi. Hutan tropis yang menjadi sasaran utama karena kekayaan sumber dayanya berada di tiga kawasan besar.</p>
-
-            <h4>Hotspot Deforestasi Dunia</h4>
-            <div class="map-regions">
-              <div class="region-card">
-                <div class="region-flag">🇧🇷</div>
-                <div class="region-name">Amazon, Brazil</div>
-                <div class="region-rate">⚠️ 11.568 km²/tahun (2022)</div>
-                <div class="region-desc">Hutan hujan terbesar di bumi, menyimpan 10% spesies darat. Terancam ekspansi pertanian dan peternakan. Presiden Lula menargetkan deforestasi nol pada 2030.</div>
-              </div>
-              <div class="region-card">
-                <div class="region-flag">🇨🇩</div>
-                <div class="region-name">Kongo, Afrika</div>
-                <div class="region-rate">⚠️ 500.000+ ha/tahun</div>
-                <div class="region-desc">Hutan tropis terbesar kedua. Tekanan utama dari pertanian subsisten dan ketidakstabilan politik. Disebut "paru-paru Afrika".</div>
-              </div>
-              <div class="region-card">
-                <div class="region-flag">🇮🇩</div>
-                <div class="region-name">Indonesia</div>
-                <div class="region-rate">⚠️ 115.000 ha/tahun (2022)</div>
-                <div class="region-desc">Hutan tropis terkaya ketiga di dunia. Kalimantan, Sumatera, dan Papua menjadi episentrum kehilangan hutan.</div>
-              </div>
-              <div class="region-card">
-                <div class="region-flag">🇧🇴</div>
-                <div class="region-name">Bolivia</div>
-                <div class="region-rate">⚠️ Meningkat 33% 2020-2022</div>
-                <div class="region-desc">Lonjakan tajam akibat kebijakan ekspansi pertanian pemerintah. Kini masuk 5 besar negara deforestasi.</div>
-              </div>
-              <div class="region-card">
-                <div class="region-flag">🇲🇾</div>
-                <div class="region-name">Malaysia (Borneo)</div>
-                <div class="region-rate">⚠️ Puluhan ribu ha/tahun</div>
-                <div class="region-desc">Sabah dan Sarawak mengalami tekanan besar dari perkebunan sawit dan penebangan kayu tropis komersial.</div>
-              </div>
-              <div class="region-card">
-                <div class="region-flag">🌏</div>
-                <div class="region-name">Asia Tenggara lain</div>
-                <div class="region-rate">⚠️ Myanmar, Kamboja, Vietnam</div>
-                <div class="region-desc">Deforestasi dipicu oleh ekspansi pertanian, pembangunan bendungan, dan penebangan ilegal yang meningkat pesat.</div>
-              </div>
-            </div>
-
-            <h4>🇮🇩 Indonesia: Ya, Sangat Serius!</h4>
-            <p>Indonesia memiliki <strong>hutan tropis terluas ketiga di dunia</strong> (~91 juta hektar pada 2020), setelah Brazil dan Kongo. Namun, negeri ini juga menjadi salah satu penyumbang deforestasi terbesar secara historis.</p>
-
-            <div class="fact-grid">
-              <div class="fact-card">
-                <span class="fact-num">74 Jt</span>
-                <span class="fact-label">Hektar hutan Indonesia hilang 1990–2020</span>
-              </div>
-              <div class="fact-card">
-                <span class="fact-num">#3</span>
-                <span class="fact-label">Posisi Indonesia dalam kehilangan hutan primer (Global Forest Watch)</span>
-              </div>
-              <div class="fact-card">
-                <span class="fact-num">115 Rb</span>
-                <span class="fact-label">Hektar hilang tahun 2022 (KLHK)</span>
-              </div>
-              <div class="fact-card">
-                <span class="fact-num">57%</span>
-                <span class="fact-label">Kalimantan kehilangan tutupan hutannya</span>
-              </div>
-            </div>
-
-            <p>Wilayah paling terdampak di Indonesia: <strong>Kalimantan (Borneo)</strong> untuk sawit dan batubara; <strong>Sumatera</strong> untuk sawit, akasia, dan pemukiman; <strong>Papua</strong> yang kini menjadi "deforestasi frontier" baru seiring ekspansi tambang dan perkebunan.</p>
-
-            <div class="highlight-box">
-              <p>Kabar baiknya: Indonesia berhasil menurunkan laju deforestasi dari 2,45 juta ha/tahun (2015) menjadi ~115.000 ha/tahun (2022) — penurunan >95% berkat kebijakan moratorium hutan dan penegakan hukum yang lebih ketat. Ini diakui dunia sebagai salah satu keberhasilan terbesar dalam sejarah konservasi.</p>
-            </div>
-
-            <div class="source-bar">
-              <span class="source-chip">Global Forest Watch 2023</span>
-              <span class="source-chip">KLHK 2022</span>
-              <span class="source-chip">INPE 2022</span>
-              <span class="source-chip">Hansen et al., Science 2013</span>
-            </div>
+          <div class="region-card">
+            <div class="region-flag">🇨🇩</div>
+            <div class="region-name">Kongo, Afrika</div>
+            <div class="region-rate">⚠️ 500.000+ ha/tahun</div>
+            <div class="region-desc">Hutan tropis terbesar kedua. Tekanan utama dari pertanian subsisten dan ketidakstabilan politik. Disebut "paru-paru Afrika".</div>
           </div>
+          <div class="region-card">
+            <div class="region-flag">🇮🇩</div>
+            <div class="region-name">Indonesia</div>
+            <div class="region-rate">⚠️ 115.000 ha/tahun (2022)</div>
+            <div class="region-desc">Hutan tropis terkaya ketiga di dunia. Kalimantan, Sumatera, dan Papua menjadi episentrum kehilangan hutan.</div>
+          </div>
+          <div class="region-card">
+            <div class="region-flag">🇧🇴</div>
+            <div class="region-name">Bolivia</div>
+            <div class="region-rate">⚠️ Meningkat 33% 2020-2022</div>
+            <div class="region-desc">Lonjakan tajam akibat kebijakan ekspansi pertanian pemerintah. Kini masuk 5 besar negara deforestasi.</div>
+          </div>
+          <div class="region-card">
+            <div class="region-flag">🇲🇾</div>
+            <div class="region-name">Malaysia (Borneo)</div>
+            <div class="region-rate">⚠️ Puluhan ribu ha/tahun</div>
+            <div class="region-desc">Sabah dan Sarawak mengalami tekanan besar dari perkebunan sawit dan penebangan kayu tropis komersial.</div>
+          </div>
+          <div class="region-card">
+            <div class="region-flag">🌏</div>
+            <div class="region-name">Asia Tenggara lain</div>
+            <div class="region-rate">⚠️ Myanmar, Kamboja, Vietnam</div>
+            <div class="region-desc">Deforestasi dipicu oleh ekspansi pertanian, pembangunan bendungan, dan penebangan ilegal yang meningkat pesat.</div>
+          </div>
+        </div>
+
+        <h4>🇮🇩 Indonesia: Ya, Sangat Serius!</h4>
+        <p>Indonesia memiliki <strong>hutan tropis terluas ketiga di dunia</strong> (~91 juta hektar pada 2020), setelah Brazil dan Kongo. Namun, negeri ini juga menjadi salah satu penyumbang deforestasi terbesar secara historis.</p>
+
+        <div class="fact-grid">
+          <div class="fact-card">
+            <span class="fact-num">74 Jt</span>
+            <span class="fact-label">Hektar hutan Indonesia hilang 1990–2020</span>
+          </div>
+          <div class="fact-card">
+            <span class="fact-num">#3</span>
+            <span class="fact-label">Posisi Indonesia dalam kehilangan hutan primer (Global Forest Watch)</span>
+          </div>
+          <div class="fact-card">
+            <span class="fact-num">115 Rb</span>
+            <span class="fact-label">Hektar hilang tahun 2022 (KLHK)</span>
+          </div>
+          <div class="fact-card">
+            <span class="fact-num">57%</span>
+            <span class="fact-label">Kalimantan kehilangan tutupan hutannya</span>
+          </div>
+        </div>
+
+        <p>Wilayah paling terdampak di Indonesia: <strong>Kalimantan (Borneo)</strong> untuk sawit dan batubara; <strong>Sumatera</strong> untuk sawit, akasia, dan pemukiman; <strong>Papua</strong> yang kini menjadi "deforestasi frontier" baru seiring ekspansi tambang dan perkebunan.</p>
+
+        <div class="highlight-box">
+          <p>Kabar baiknya: Indonesia berhasil menurunkan laju deforestasi dari 2,45 juta ha/tahun (2015) menjadi ~115.000 ha/tahun (2022) — penurunan >95% berkat kebijakan moratorium hutan dan penegakan hukum yang lebih ketat. Ini diakui dunia sebagai salah satu keberhasilan terbesar dalam sejarah konservasi.</p>
+        </div>
+
+        <div class="source-bar">
+          <span class="source-chip">Global Forest Watch 2023</span>
+          <span class="source-chip">KLHK 2022</span>
+          <span class="source-chip">INPE 2022</span>
+          <span class="source-chip">Hansen et al., Science 2013</span>
         </div>
       </div>
     </div>
+  </div>
+</div>
 
-    <!-- Q4 -->
-    <div class="qa-card reveal" id="q4">
-      <div class="qa-card-header" onclick="toggleCard(this)">
-        <div class="q-number">04</div>
-        <div class="q-text">
-          <h3>Kapan terjadi deforestasi?</h3>
-          <div class="q-meta">Sejarah & Kronologi</div>
-        </div>
-        <div class="q-toggle">+</div>
+<!-- Q4 -->
+<div class="qa-card reveal" id="q4">
+  <div class="qa-card-header" onclick="toggleCard(this)">
+    <div class="q-number">04</div>
+    <div class="q-text">
+      <h3>Kapan terjadi deforestasi?</h3>
+      <div class="q-meta">Sejarah & Kronologi</div>
+    </div>
+    <div class="q-toggle">+</div>
+  </div>
+  <div class="qa-card-body">
+    <div class="qa-card-inner">
+
+      <div class="image-slot active-img" data-slot="q4">
+        <img class="image-preview" src="https://yaffblog.wordpress.com/wp-content/uploads/2026/05/img_1424.png" alt="Grafik Sejarah Kehilangan Hutan">
+        <div class="image-caption">Grafik laju kehilangan hutan global dari masa ke masa</div>
+        <div class="image-overlay">GANTI GAMBAR</div>
       </div>
-      <div class="qa-card-body">
-        <div class="qa-card-inner">
 
-          <div class="image-slot active-img" data-slot="q4">
-            <img class="image-preview" src="https://yaffblog.wordpress.com/wp-content/uploads/2026/05/img_1424.png" alt="Grafik Sejarah Kehilangan Hutan" style="display:block;">
-            <div class="image-caption">Grafik laju kehilangan hutan global dari masa ke masa</div>
-            <div class="image-overlay" onclick="openModal(this.parentElement)">GANTI GAMBAR</div>
+      <div class="answer-content">
+        <p>Deforestasi bukan fenomena baru — ia telah berlangsung sejak manusia pertama mengembangkan pertanian. Namun, <strong>skala dan kecepatannya meledak secara dramatis sejak era industri modern</strong>.</p>
+
+        <h4>Garis Waktu Deforestasi Dunia</h4>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-year">8.000 SM – 1.000 M</div>
+            <div class="timeline-text"><strong>Era Pertanian Awal:</strong> Manusia mulai membuka hutan untuk ladang. Diperkirakan hutan Eropa, Cina, dan Asia Selatan telah berkurang signifikan. Namun laju masih lambat karena populasi kecil.</div>
           </div>
-
-          <div class="answer-content">
-            <p>Deforestasi bukan fenomena baru — ia telah berlangsung sejak manusia pertama mengembangkan pertanian. Namun, <strong>skala dan kecepatannya meledak secara dramatis sejak era industri modern</strong>.</p>
-
-            <h4>Garis Waktu Deforestasi Dunia</h4>
-            <div class="timeline">
-              <div class="timeline-item">
-                <div class="timeline-year">8.000 SM – 1.000 M</div>
-                <div class="timeline-text"><strong>Era Pertanian Awal:</strong> Manusia mulai membuka hutan untuk ladang. Diperkirakan hutan Eropa, Cina, dan Asia Selatan telah berkurang signifikan. Namun laju masih lambat karena populasi kecil.</div>
-              </div>
-              <div class="timeline-item">
-                <div class="timeline-year">1500 – 1800</div>
-                <div class="timeline-text"><strong>Era Kolonialisme:</strong> Ekspansi Eropa ke Amerika, Asia, dan Afrika memicu pembukaan hutan besar-besaran untuk perkebunan (tebu, tembakau, kopi). Diperkirakan 2 juta km² hutan hilang dalam periode ini.</div>
-              </div>
-              <div class="timeline-item">
-                <div class="timeline-year">1800 – 1950</div>
-                <div class="timeline-text"><strong>Revolusi Industri:</strong> Kebutuhan kayu untuk bahan bangunan, bahan bakar industri, dan rel kereta meledak. Hutan Eropa dan Amerika Utara hampir punah. Total kehilangan hutan global mencapai 600 juta ha.</div>
-              </div>
-              <div class="timeline-item">
-                <div class="timeline-year">1950 – 1980</div>
-                <div class="timeline-text"><strong>Boom Pasca-Perang & Green Revolution:</strong> Ekspansi pertanian industri masif. Hutan Amazon mulai dibuka besar-besaran. Indonesia membuka hutan untuk transmigrasi dan perkebunan sawit. Kehilangan hutan tropis meningkat 10x lipat.</div>
-              </div>
-              <div class="timeline-item">
-                <div class="timeline-year">1980 – 2000</div>
-                <div class="timeline-text"><strong>Puncak Deforestasi Global:</strong> Laju tertinggi sepanjang sejarah — sekitar 15-16 juta ha/tahun. Amazon, Kalimantan, dan hutan Afika tengah ditebangi habis-habisan. Laporan pertama IPCC memperingatkan krisis iklim terkait deforestasi.</div>
-              </div>
-              <div class="timeline-item">
-                <div class="timeline-year">2000 – 2010</div>
-                <div class="timeline-text"><strong>Kesadaran Global Meningkat:</strong> Perjanjian internasional (Protokol Kyoto, REDD+) mulai terbentuk. Laju sedikit menurun menjadi ~13 juta ha/tahun, namun deforestasi di Asia Tenggara justru melonjak.</div>
-              </div>
-              <div class="timeline-item">
-                <div class="timeline-year">2010 – Sekarang</div>
-                <div class="timeline-text"><strong>Era Pemantauan Satelit:</strong> Teknologi seperti Global Forest Watch memungkinkan pemantauan real-time. Laju turun menjadi ~10 juta ha/tahun tapi masih jauh dari target. COVID-19 (2020) sempat meningkatkan deforestasi akibat lemahnya pengawasan.</div>
-              </div>
-            </div>
-
-            <div class="highlight-box">
-              <p>Fakta mengejutkan: Dalam 10.000 tahun terakhir, manusia telah menghancurkan <strong>setengah dari semua hutan di bumi</strong>. Dan separuh dari penghancuran itu terjadi hanya dalam 100 tahun terakhir. (WWF, 2021)</p>
-            </div>
-
-            <div class="source-bar">
-              <span class="source-chip">Williams, M. — Deforesting the Earth, 2003</span>
-              <span class="source-chip">FAO 2020</span>
-              <span class="source-chip">WWF 2021</span>
-              <span class="source-chip">Global Forest Watch</span>
-            </div>
+          <div class="timeline-item">
+            <div class="timeline-year">1500 – 1800</div>
+            <div class="timeline-text"><strong>Era Kolonialisme:</strong> Ekspansi Eropa ke Amerika, Asia, dan Afrika memicu pembukaan hutan besar-besaran untuk perkebunan (tebu, tembakau, kopi). Diperkirakan 2 juta km² hutan hilang dalam periode ini.</div>
           </div>
+          <div class="timeline-item">
+            <div class="timeline-year">1800 – 1950</div>
+            <div class="timeline-text"><strong>Revolusi Industri:</strong> Kebutuhan kayu untuk bahan bangunan, bahan bakar industri, dan rel kereta meledak. Hutan Eropa dan Amerika Utara hampir punah. Total kehilangan hutan global mencapai 600 juta ha.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">1950 – 1980</div>
+            <div class="timeline-text"><strong>Boom Pasca-Perang & Green Revolution:</strong> Ekspansi pertanian industri masif. Hutan Amazon mulai dibuka besar-besaran. Indonesia membuka hutan untuk transmigrasi dan perkebunan sawit. Kehilangan hutan tropis meningkat 10x lipat.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">1980 – 2000</div>
+            <div class="timeline-text"><strong>Puncak Deforestasi Global:</strong> Laju tertinggi sepanjang sejarah — sekitar 15-16 juta ha/tahun. Amazon, Kalimantan, dan hutan Afika tengah ditebangi habis-habisan. Laporan pertama IPCC memperingatkan krisis iklim terkait deforestasi.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2000 – 2010</div>
+            <div class="timeline-text"><strong>Kesadaran Global Meningkat:</strong> Perjanjian internasional (Protokol Kyoto, REDD+) mulai terbentuk. Laju sedikit menurun menjadi ~13 juta ha/tahun, namun deforestasi di Asia Tenggara justru melonjak.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2010 – Sekarang</div>
+            <div class="timeline-text"><strong>Era Pemantauan Satelit:</strong> Teknologi seperti Global Forest Watch memungkinkan pemantauan real-time. Laju turun menjadi ~10 juta ha/tahun tapi masih jauh dari target. COVID-19 (2020) sempat meningkatkan deforestasi akibat lemahnya pengawasan.</div>
+          </div>
+        </div>
+
+        <div class="highlight-box">
+          <p>Fakta mengejutkan: Dalam 10.000 tahun terakhir, manusia telah menghancurkan <strong>setengah dari semua hutan di bumi</strong>. Dan separuh dari penghancuran itu terjadi hanya dalam 100 tahun terakhir. (WWF, 2021)</p>
+        </div>
+
+        <div class="source-bar">
+          <span class="source-chip">Williams, M. — Deforesting the Earth, 2003</span>
+          <span class="source-chip">FAO 2020</span>
+          <span class="source-chip">WWF 2021</span>
+          <span class="source-chip">Global Forest Watch</span>
         </div>
       </div>
     </div>
+  </div>
+</div>
 
-    <!-- Q5 -->
-    <div class="qa-card reveal" id="q5">
-      <div class="qa-card-header" onclick="toggleCard(this)">
-        <div class="q-number">05</div>
-        <div class="q-text">
-          <h3>Apa saja dampak deforestasi?</h3>
-          <div class="q-meta">Konsekuensi Ekologis, Sosial & Ekonomi</div>
-        </div>
-        <div class="q-toggle">+</div>
+<!-- Q5 -->
+<div class="qa-card reveal" id="q5">
+  <div class="qa-card-header" onclick="toggleCard(this)">
+    <div class="q-number">05</div>
+    <div class="q-text">
+      <h3>Apa saja dampak deforestasi?</h3>
+      <div class="q-meta">Konsekuensi Ekologis, Sosial & Ekonomi</div>
+    </div>
+    <div class="q-toggle">+</div>
+  </div>
+  <div class="qa-card-body">
+    <div class="qa-card-inner">
+
+      <div class="image-slot active-img" data-slot="q5">
+        <img class="image-preview" src="https://yaffblog.wordpress.com/wp-content/uploads/2026/05/img_1429.jpeg" alt="Banjir Bandang akibat Deforestasi">
+        <div class="image-caption">Banjir bandang — salah satu dampak langsung hilangnya tutupan hutan</div>
+        <div class="image-overlay">GANTI GAMBAR</div>
       </div>
-      <div class="qa-card-body">
-        <div class="qa-card-inner">
 
-          <div class="image-slot" onclick="openModal(this)" data-slot="q5">
-            <div class="slot-icon">⚠️</div>
-            <div class="slot-label">Dampak Deforestasi — Banjir / Longsor / Kepunahan</div>
-            <div class="slot-hint">Contoh: banjir bandang, tanah longsor, atau satwa yang kehilangan habitat</div>
-            <img class="image-preview" alt="">
-            <div class="image-overlay">GANTI GAMBAR</div>
-          </div>
+      <div class="answer-content">
+        <p>Dampak deforestasi bersifat <strong>multidimensi dan berjangkauan jauh</strong> — tidak hanya menghancurkan ekosistem lokal, tetapi juga mengancam stabilitas iklim global, kesehatan manusia, dan keberlangsungan ekonomi jangka panjang.</p>
 
-          <div class="answer-content">
-            <p>Dampak deforestasi bersifat <strong>multidimensi dan berjangkauan jauh</strong> — tidak hanya menghancurkan ekosistem lokal, tetapi juga mengancam stabilitas iklim global, kesehatan manusia, dan keberlangsungan ekonomi jangka panjang.</p>
+        <div class="tabs">
+          <button class="tab-btn active" onclick="switchTab(this,'imp-eco')">🌿 Ekologi</button>
+          <button class="tab-btn" onclick="switchTab(this,'imp-clim')">🌡️ Iklim</button>
+          <button class="tab-btn" onclick="switchTab(this,'imp-soc')">👥 Sosial</button>
+          <button class="tab-btn" onclick="switchTab(this,'imp-econ')">💰 Ekonomi</button>
+        </div>
 
-            <div class="tabs">
-              <button class="tab-btn active" onclick="switchTab(this,'imp-eco')">🌿 Ekologi</button>
-              <button class="tab-btn" onclick="switchTab(this,'imp-clim')">🌡️ Iklim</button>
-              <button class="tab-btn" onclick="switchTab(this,'imp-soc')">👥 Sosial</button>
-              <button class="tab-btn" onclick="switchTab(this,'imp-econ')">💰 Ekonomi</button>
-            </div>
+        <div class="tab-panel active" id="imp-eco">
+          <ul class="impact-list">
+            <li><div class="li-icon">🦁</div><div class="li-text"><strong>Kepunahan Spesies Massal:</strong> Hutan tropis menampung 50–80% spesies darat dunia. Kehilangan habitat adalah ancaman kepunahan #1. Diperkirakan 137 spesies punah setiap hari — laju kepunahan 1.000x lebih cepat dari normal.</div></li>
+            <li><div class="li-icon">💧</div><div class="li-text"><strong>Gangguan Siklus Hidrologi:</strong> Hutan berperan sebagai "spons" air — menyerap air hujan, mengisi akuifer bawah tanah, dan mengatur aliran sungai. Hilangnya hutan menyebabkan banjir di musim hujan dan kekeringan di musim kemarau.</div></li>
+            <li><div class="li-icon">🏔️</div><div class="li-text"><strong>Erosi Tanah & Longsor:</strong> Akar pohon menahan tanah. Tanpa tutupan hutan, lapisan tanah subur mudah terseret air — dalam 10 tahun, tanah gundul bisa kehilangan puluhan cm lapisan tanah atas yang butuh ratusan tahun terbentuk.</div></li>
+            <li><div class="li-icon">🧬</div><div class="li-text"><strong>Hilangnya Keanekaragaman Hayati:</strong> Bukan sekadar angka spesies, tapi keruntuhan jaring-jaring ekologis yang telah berevolusi jutaan tahun. Hilangnya satu spesies bisa memicu efek domino bagi ekosistem.</div></li>
+          </ul>
+        </div>
 
-            <div class="tab-panel active" id="imp-eco">
-              <ul class="impact-list">
-                <li><div class="li-icon">🦁</div><div class="li-text"><strong>Kepunahan Spesies Massal:</strong> Hutan tropis menampung 50–80% spesies darat dunia. Kehilangan habitat adalah ancaman kepunahan #1. Diperkirakan 137 spesies punah setiap hari — laju kepunahan 1.000x lebih cepat dari normal.</div></li>
-                <li><div class="li-icon">💧</div><div class="li-text"><strong>Gangguan Siklus Hidrologi:</strong> Hutan berperan sebagai "spons" air — menyerap air hujan, mengisi akuifer bawah tanah, dan mengatur aliran sungai. Hilangnya hutan menyebabkan banjir di musim hujan dan kekeringan di musim kemarau.</div></li>
-                <li><div class="li-icon">🏔️</div><div class="li-text"><strong>Erosi Tanah & Longsor:</strong> Akar pohon menahan tanah. Tanpa tutupan hutan, lapisan tanah subur mudah terseret air — dalam 10 tahun, tanah gundul bisa kehilangan puluhan cm lapisan tanah atas yang butuh ratusan tahun terbentuk.</div></li>
-                <li><div class="li-icon">🧬</div><div class="li-text"><strong>Hilangnya Keanekaragaman Hayati:</strong> Bukan sekadar angka spesies, tapi keruntuhan jaring-jaring ekologis yang telah berevolusi jutaan tahun. Hilangnya satu spesies bisa memicu efek domino bagi ekosistem.</div></li>
-              </ul>
-            </div>
+        <div class="tab-panel" id="imp-clim">
+          <ul class="impact-list">
+            <li><div class="li-icon">💨</div><div class="li-text"><strong>Emisi Karbon Masif:</strong> Hutan menyimpan 861 gigaton karbon (IPCC). Ketika ditebang/dibakar, karbon ini dilepaskan ke atmosfer. Deforestasi dan degradasi hutan menyumbang 10-15% emisi GRK global — setara emisi seluruh kendaraan di dunia.</div></li>
+            <li><div class="li-icon">🌧️</div><div class="li-text"><strong>Perubahan Pola Hujan:</strong> Hutan tropis menghasilkan "sungai terbang" — aliran uap air yang menghasilkan hujan di ribuan km jauhnya. Amazon, misalnya, menghasilkan hujan yang mengairi pertanian di Brazil tengah dan selatan.</div></li>
+            <li><div class="li-icon">🌡️</div><div class="li-text"><strong>Peningkatan Suhu Lokal:</strong> Hutan memberikan efek pendinginan melalui evapotranspirasi. Lahan gundul bisa 10°C lebih panas dari kawasan hutan di sekitarnya (penelitian INPA, 2020).</div></li>
+          </ul>
+        </div>
 
-            <div class="tab-panel" id="imp-clim">
-              <ul class="impact-list">
-                <li><div class="li-icon">💨</div><div class="li-text"><strong>Emisi Karbon Masif:</strong> Hutan menyimpan 861 gigaton karbon (IPCC). Ketika ditebang/dibakar, karbon ini dilepaskan ke atmosfer. Deforestasi dan degradasi hutan menyumbang 10-15% emisi GRK global — setara emisi seluruh kendaraan di dunia.</div></li>
-                <li><div class="li-icon">🌧️</div><div class="li-text"><strong>Perubahan Pola Hujan:</strong> Hutan tropis menghasilkan "sungai terbang" — aliran uap air yang menghasilkan hujan di ribuan km jauhnya. Amazon, misalnya, menghasilkan hujan yang mengairi pertanian di Brazil tengah dan selatan.</div></li>
-                <li><div class="li-icon">🌡️</div><div class="li-text"><strong>Peningkatan Suhu Lokal:</strong> Hutan memberikan efek pendinginan melalui evapotranspirasi. Lahan gundul bisa 10°C lebih panas dari kawasan hutan di sekitarnya (penelitian INPA, 2020).</div></li>
-              </ul>
-            </div>
+        <div class="tab-panel" id="imp-soc">
+          <ul class="impact-list">
+            <li><div class="li-icon">🏠</div><div class="li-text"><strong>Penggusuran Masyarakat Adat:</strong> 1,5 miliar orang bergantung pada hutan untuk kehidupan mereka. Deforestasi mengancam eksistensi ratusan komunitas adat yang hak tanahnya seringkali tidak diakui secara hukum.</div></li>
+            <li><div class="li-icon">🏥</div><div class="li-text"><strong>Munculnya Penyakit Baru (Zoonosis):</strong> 70% penyakit infeksi baru pada manusia berasal dari satwa liar. Kehancuran habitat memaksa satwa berhubungan dengan manusia, meningkatkan risiko transmisi virus. COVID-19, Ebola, dan SARS dikaitkan dengan gangguan ekosistem hutan.</div></li>
+            <li><div class="li-icon">🫁</div><div class="li-text"><strong>Polusi Udara & Kesehatan:</strong> Asap kebakaran hutan (seperti di Kalimantan 2015 dan 2019) menyebabkan jutaan kasus ISPA, dan biaya kesehatan yang ditanggung rakyat Indonesia diestimasi mencapai Rp 20 triliun per kejadian.</div></li>
+          </ul>
+        </div>
 
-            <div class="tab-panel" id="imp-soc">
-              <ul class="impact-list">
-                <li><div class="li-icon">🏠</div><div class="li-text"><strong>Penggusuran Masyarakat Adat:</strong> 1,5 miliar orang bergantung pada hutan untuk kehidupan mereka. Deforestasi mengancam eksistensi ratusan komunitas adat yang hak tanahnya seringkali tidak diakui secara hukum.</div></li>
-                <li><div class="li-icon">🏥</div><div class="li-text"><strong>Munculnya Penyakit Baru (Zoonosis):</strong> 70% penyakit infeksi baru pada manusia berasal dari satwa liar. Kehancuran habitat memaksa satwa berhubungan dengan manusia, meningkatkan risiko transmisi virus. COVID-19, Ebola, dan SARS dikaitkan dengan gangguan ekosistem hutan.</div></li>
-                <li><div class="li-icon">🫁</div><div class="li-text"><strong>Polusi Udara & Kesehatan:</strong> Asap kebakaran hutan (seperti di Kalimantan 2015 dan 2019) menyebabkan jutaan kasus ISPA, dan biaya kesehatan yang ditanggung rakyat Indonesia diestimasi mencapai Rp 20 triliun per kejadian.</div></li>
-              </ul>
-            </div>
+        <div class="tab-panel" id="imp-econ">
+          <ul class="impact-list">
+            <li><div class="li-icon">🌾</div><div class="li-text"><strong>Penurunan Produktivitas Pertanian:</strong> Ironisnya, deforestasi untuk lahan pertanian jangka pendek menghancurkan kesuburan tanah, mengganggu curah hujan, dan akhirnya menurunkan produktivitas pertanian jangka panjang.</div></li>
+            <li><div class="li-icon">🐟</div><div class="li-text"><strong>Kerugian Layanan Ekosistem:</strong> Nilai ekonomi "jasa" hutan (penyerapan karbon, pengaturan air, polinasi, pariwisata) diestimasi $2,5 triliun/tahun secara global (The Economics of Ecosystems & Biodiversity, 2010).</div></li>
+            <li><div class="li-icon">💸</div><div class="li-text"><strong>Bencana Alam & Biaya Pemulihan:</strong> Banjir, longsor, dan kekeringan yang diperparah deforestasi menelan kerugian ekonomi miliaran dolar setiap tahun. Indonesia kehilangan Rp 221 triliun pada kebakaran 2015 (Bank Dunia).</div></li>
+          </ul>
+        </div>
 
-            <div class="tab-panel" id="imp-econ">
-              <ul class="impact-list">
-                <li><div class="li-icon">🌾</div><div class="li-text"><strong>Penurunan Produktivitas Pertanian:</strong> Ironisnya, deforestasi untuk lahan pertanian jangka pendek menghancurkan kesuburan tanah, mengganggu curah hujan, dan akhirnya menurunkan produktivitas pertanian jangka panjang.</div></li>
-                <li><div class="li-icon">🐟</div><div class="li-text"><strong>Kerugian Layanan Ekosistem:</strong> Nilai ekonomi "jasa" hutan (penyerapan karbon, pengaturan air, polinasi, pariwisata) diestimasi $2,5 triliun/tahun secara global (The Economics of Ecosystems & Biodiversity, 2010).</div></li>
-                <li><div class="li-icon">💸</div><div class="li-text"><strong>Bencana Alam & Biaya Pemulihan:</strong> Banjir, longsor, dan kekeringan yang diperparah deforestasi menelan kerugian ekonomi miliaran dolar setiap tahun. Indonesia kehilangan Rp 221 triliun pada kebakaran 2015 (Bank Dunia).</div></li>
-              </ul>
-            </div>
-
-            <div class="source-bar">
-              <span class="source-chip">IPCC AR6 2022</span>
-              <span class="source-chip">TEEB 2010</span>
-              <span class="source-chip">WHO Zoonoses Report 2020</span>
-              <span class="source-chip">World Bank Indonesia 2016</span>
-            </div>
-          </div>
+        <div class="source-bar">
+          <span class="source-chip">IPCC AR6 2022</span>
+          <span class="source-chip">TEEB 2010</span>
+          <span class="source-chip">WHO Zoonoses Report 2020</span>
+          <span class="source-chip">World Bank Indonesia 2016</span>
         </div>
       </div>
     </div>
+  </div>
+</div>
 
-    <!-- Q6 -->
-    <div class="qa-card reveal" id="q6">
-      <div class="qa-card-header" onclick="toggleCard(this)">
-        <div class="q-number">06</div>
-        <div class="q-text">
-          <h3>Siapa yang terkena dampak? Seperti apa dampaknya?</h3>
-          <div class="q-meta">Pihak yang Terdampak & Mekanisme Dampak</div>
-        </div>
-        <div class="q-toggle">+</div>
+<!-- Q6 -->
+<div class="qa-card reveal" id="q6">
+  <div class="qa-card-header" onclick="toggleCard(this)">
+    <div class="q-number">06</div>
+    <div class="q-text">
+      <h3>Siapa yang terkena dampak? Seperti apa dampaknya?</h3>
+      <div class="q-meta">Pihak yang Terdampak & Mekanisme Dampak</div>
+    </div>
+    <div class="q-toggle">+</div>
+  </div>
+  <div class="qa-card-body">
+    <div class="qa-card-inner">
+
+      <div class="image-slot active-img" data-slot="q6">
+        <img class="image-preview" src="https://yaffblog.wordpress.com/wp-content/uploads/2026/05/img_1428-1.jpeg" alt="Satwa Liar Terdampak Deforestasi">
+        <div class="image-caption">Satwa liar kehilangan habitat akibat deforestasi</div>
+        <div class="image-overlay">GANTI GAMBAR</div>
       </div>
-      <div class="qa-card-body">
-        <div class="qa-card-inner">
 
-          <div class="image-slot" onclick="openModal(this)" data-slot="q6">
-            <div class="slot-icon">👥</div>
-            <div class="slot-label">Komunitas Adat / Satwa Liar Terdampak</div>
-            <div class="slot-hint">Contoh: wajah komunitas adat, orangutan kehilangan habitat, petani di lahan kering</div>
-            <img class="image-preview" alt="">
-            <div class="image-overlay">GANTI GAMBAR</div>
-          </div>
+      <div class="answer-content">
+        <p>Deforestasi berdampak pada <strong>semua makhluk hidup di bumi</strong>, namun dengan intensitas dan mekanisme yang berbeda. Berikut kelompok utama yang paling terdampak:</p>
 
-          <div class="answer-content">
-            <p>Deforestasi berdampak pada <strong>semua makhluk hidup di bumi</strong>, namun dengan intensitas dan mekanisme yang berbeda. Berikut kelompok utama yang paling terdampak:</p>
-
-            <ul class="impact-list">
-              <li>
-                <div class="li-icon">🏕️</div>
-                <div class="li-text">
-                  <strong>Masyarakat Adat & Lokal:</strong><br>
-                  <em>Dampak:</em> Kehilangan mata pencaharian, sumber pangan, bahan obat-obatan tradisional, dan tempat tinggal. Mereka seringkali mengalami penggusuran paksa tanpa kompensasi memadai. Di Indonesia, komunitas Dayak, Orang Rimba (Suku Anak Dalam), dan berbagai suku Papua langsung merasakan kehancuran lingkungan hidup mereka.<br>
-                  <em>Mengapa?</em> Karena hutan <em>adalah</em> kehidupan mereka — bukan sekadar tempat tinggal tetapi identitas budaya, spiritual, dan ekonomi yang telah berlangsung ribuan tahun.
-                </div>
-              </li>
-              <li>
-                <div class="li-icon">🌿</div>
-                <div class="li-text">
-                  <strong>Satwa Liar & Biodiversitas:</strong><br>
-                  <em>Dampak:</em> Kehilangan habitat langsung mengancam keberlangsungan spesies. Orangutan Borneo (<em>Pongo pygmaeus</em>) kehilangan 50% habitatnya dalam 20 tahun — populasinya turun dari 100.000 menjadi sekitar 54.000 ekor. Harimau Sumatera kini tersisa kurang dari 400 ekor di alam liar.<br>
-                  <em>Mengapa?</em> Fragmentasi hutan memutus koridor migrasi, mengurangi ketersediaan pangan, dan meningkatkan konflik dengan manusia.
-                </div>
-              </li>
-              <li>
-                <div class="li-icon">👨‍🌾</div>
-                <div class="li-text">
-                  <strong>Petani & Komunitas Pertanian:</strong><br>
-                  <em>Dampak:</em> Deforestasi di hulu sungai menyebabkan banjir dan kekeringan silih berganti di lahan pertanian bawah. Hilangnya penyerbuk (lebah, kupu-kupu) akibat hancurnya habitat menurunkan produktivitas tanaman.<br>
-                  <em>Mengapa?</em> Hutan mengatur siklus air dan menyediakan layanan ekosistem yang menopang pertanian.
-                </div>
-              </li>
-              <li>
-                <div class="li-icon">🌍</div>
-                <div class="li-text">
-                  <strong>Seluruh Umat Manusia (Perubahan Iklim):</strong><br>
-                  <em>Dampak:</em> Melalui pelepasan karbon dan gangguan siklus air, deforestasi mempercepat perubahan iklim global — mengancam ketahanan pangan, ketersediaan air, kesehatan, dan wilayah pesisir di seluruh dunia.<br>
-                  <em>Mengapa?</em> Hutan adalah sistem penyangga iklim bumi. Kehancurannya memperlemah kemampuan bumi mengatur suhu dan pola cuaca secara global.
-                </div>
-              </li>
-              <li>
-                <div class="li-icon">🏙️</div>
-                <div class="li-text">
-                  <strong>Penduduk Perkotaan:</strong><br>
-                  <em>Dampak:</em> Tidak langsung, tetapi nyata: harga pangan naik akibat gagal panen, peningkatan bencana alam, kualitas udara memburuk dari asap kebakaran, dan risiko pandemi penyakit baru.<br>
-                  <em>Mengapa?</em> Kota bergantung pada ekosistem hutan untuk air bersih, udara bersih, dan stabilitas iklim yang menopang sistem pangan dan infrastruktur mereka.
-                </div>
-              </li>
-            </ul>
-
-            <div class="source-bar">
-              <span class="source-chip">IUCN Red List 2023</span>
-              <span class="source-chip">Rights and Resources Initiative 2020</span>
-              <span class="source-chip">WWF Species Report 2022</span>
+        <ul class="impact-list">
+          <li>
+            <div class="li-icon">🏕️</div>
+            <div class="li-text">
+              <strong>Masyarakat Adat & Lokal:</strong><br>
+              <em>Dampak:</em> Kehilangan mata pencaharian, sumber pangan, bahan obat-obatan tradisional, dan tempat tinggal. Mereka seringkali mengalami penggusuran paksa tanpa kompensasi memadai. Di Indonesia, komunitas Dayak, Orang Rimba (Suku Anak Dalam), dan berbagai suku Papua langsung merasakan kehancuran lingkungan hidup mereka.<br>
+              <em>Mengapa?</em> Karena hutan <em>adalah</em> kehidupan mereka — bukan sekadar tempat tinggal tetapi identitas budaya, spiritual, dan ekonomi yang telah berlangsung ribuan tahun.
             </div>
-          </div>
+          </li>
+          <li>
+            <div class="li-icon">🌿</div>
+            <div class="li-text">
+              <strong>Satwa Liar & Biodiversitas:</strong><br>
+              <em>Dampak:</em> Kehilangan habitat langsung mengancam keberlangsungan spesies. Orangutan Borneo (<em>Pongo pygmaeus</em>) kehilangan 50% habitatnya dalam 20 tahun — populasinya turun dari 100.000 menjadi sekitar 54.000 ekor. Harimau Sumatera kini tersisa kurang dari 400 ekor di alam liar.<br>
+              <em>Mengapa?</em> Fragmentasi hutan memutus koridor migrasi, mengurangi ketersediaan pangan, dan meningkatkan konflik dengan manusia.
+            </div>
+          </li>
+          <li>
+            <div class="li-icon">👨‍🌾</div>
+            <div class="li-text">
+              <strong>Petani & Komunitas Pertanian:</strong><br>
+              <em>Dampak:</em> Deforestasi di hulu sungai menyebabkan banjir dan kekeringan silih berganti di lahan pertanian bawah. Hilangnya penyerbuk (lebah, kupu-kupu) akibat hancurnya habitat menurunkan produktivitas tanaman.<br>
+              <em>Mengapa?</em> Hutan mengatur siklus air dan menyediakan layanan ekosistem yang menopang pertanian.
+            </div>
+          </li>
+          <li>
+            <div class="li-icon">🌍</div>
+            <div class="li-text">
+              <strong>Seluruh Umat Manusia (Perubahan Iklim):</strong><br>
+              <em>Dampak:</em> Melalui pelepasan karbon dan gangguan siklus air, deforestasi mempercepat perubahan iklim global — mengancam ketahanan pangan, ketersediaan air, kesehatan, dan wilayah pesisir di seluruh dunia.<br>
+              <em>Mengapa?</em> Hutan adalah sistem penyangga iklim bumi. Kehancurannya memperlemah kemampuan bumi mengatur suhu dan pola cuaca secara global.
+            </div>
+          </li>
+          <li>
+            <div class="li-icon">🏙️</div>
+            <div class="li-text">
+              <strong>Penduduk Perkotaan:</strong><br>
+              <em>Dampak:</em> Tidak langsung, tetapi nyata: harga pangan naik akibat gagal panen, peningkatan bencana alam, kualitas udara memburuk dari asap kebakaran, dan risiko pandemi penyakit baru.<br>
+              <em>Mengapa?</em> Kota bergantung pada ekosistem hutan untuk air bersih, udara bersih, dan stabilitas iklim yang menopang sistem pangan dan infrastruktur mereka.
+            </div>
+          </li>
+        </ul>
+
+        <div class="source-bar">
+          <span class="source-chip">IUCN Red List 2023</span>
+          <span class="source-chip">Rights and Resources Initiative 2020</span>
+          <span class="source-chip">WWF Species Report 2022</span>
         </div>
       </div>
     </div>
+  </div>
+</div>
 
-    <!-- Q7 -->
-    <div class="qa-card reveal" id="q7">
-      <div class="qa-card-header" onclick="toggleCard(this)">
-        <div class="q-number">07</div>
-        <div class="q-text">
-          <h3>Apakah deforestasi bisa dihentikan? Mengapa?</h3>
-          <div class="q-meta">Kemungkinan & Tantangan</div>
-        </div>
-        <div class="q-toggle">+</div>
+<!-- Q7 -->
+<div class="qa-card reveal" id="q7">
+  <div class="qa-card-header" onclick="toggleCard(this)">
+    <div class="q-number">07</div>
+    <div class="q-text">
+      <h3>Apakah deforestasi bisa dihentikan? Mengapa?</h3>
+      <div class="q-meta">Kemungkinan & Tantangan</div>
+    </div>
+    <div class="q-toggle">+</div>
+  </div>
+  <div class="qa-card-body">
+    <div class="qa-card-inner">
+
+      <div class="image-slot active-img" data-slot="q7">
+        <img class="image-preview" src="https://yaffblog.wordpress.com/wp-content/uploads/2026/05/img_1431.jpeg" alt="Upaya Penghentian Deforestasi">
+        <div class="image-caption">Upaya nyata penghentian deforestasi — penegakan hukum dan patroli kawasan hutan</div>
+        <div class="image-overlay">GANTI GAMBAR</div>
       </div>
-      <div class="qa-card-body">
-        <div class="qa-card-inner">
 
-          <div class="image-slot" onclick="openModal(this)" data-slot="q7">
-            <div class="slot-icon">🛑</div>
-            <div class="slot-label">Upaya Penghentian Deforestasi</div>
-            <div class="slot-hint">Contoh: penegakan hukum hutan, patroli KLHK, moratorium hutan</div>
-            <img class="image-preview" alt="">
-            <div class="image-overlay">GANTI GAMBAR</div>
+      <div class="answer-content">
+        <p><strong>Ya, deforestasi BISA dihentikan</strong> — dan bukti nyata sudah ada. Namun ini memerlukan kehendak politik yang kuat, investasi besar, dan transformasi sistem ekonomi global. Berikut analisis lengkapnya:</p>
+
+        <h4>Bukti Bahwa Deforestasi Bisa Dihentikan</h4>
+        <div class="fact-grid">
+          <div class="fact-card">
+            <span class="fact-num">🇧🇷 -80%</span>
+            <span class="fact-label">Brazil kurangi deforestasi Amazon 2004–2012 melalui sistem pemantauan PRODES & penegakan hukum</span>
           </div>
-
-          <div class="answer-content">
-            <p><strong>Ya, deforestasi BISA dihentikan</strong> — dan bukti nyata sudah ada. Namun ini memerlukan kehendak politik yang kuat, investasi besar, dan transformasi sistem ekonomi global. Berikut analisis lengkapnya:</p>
-
-            <h4>Bukti Bahwa Deforestasi Bisa Dihentikan</h4>
-            <div class="fact-grid">
-              <div class="fact-card">
-                <span class="fact-num">🇧🇷 -80%</span>
-                <span class="fact-label">Brazil kurangi deforestasi Amazon 2004–2012 melalui sistem pemantauan PRODES & penegakan hukum</span>
-              </div>
-              <div class="fact-card">
-                <span class="fact-num">🇮🇩 -95%</span>
-                <span class="fact-label">Indonesia kurangi laju deforestasi dari 2,45 jt ha (2015) menjadi ~115 rb ha (2022)</span>
-              </div>
-              <div class="fact-card">
-                <span class="fact-num">🇨🇷 +50%</span>
-                <span class="fact-label">Kosta Rika lipat-gandakan tutupan hutan dari 21% (1987) menjadi 52% (2019)</span>
-              </div>
-              <div class="fact-card">
-                <span class="fact-num">🌍 COP26</span>
-                <span class="fact-label">141 negara berjanji hentikan deforestasi pada 2030 — menandatangani Glasgow Forest Declaration</span>
-              </div>
-            </div>
-
-            <h4>Mengapa Sulit (Hambatan Nyata)</h4>
-            <ul class="cause-list">
-              <li><div class="li-icon">💵</div><div class="li-text"><strong>Insentif Ekonomi Kuat:</strong> Tanah bekas hutan menghasilkan komoditas bernilai miliaran dolar. Selama permintaan global untuk sawit, kedelai, daging sapi, dan kayu terus tinggi, tekanan untuk membuka hutan tidak akan hilang.</div></li>
-              <li><div class="li-icon">⚖️</div><div class="li-text"><strong>Kemiskinan & Keadilan:</strong> Negara-negara pemilik hutan tropis adalah negara berkembang yang membutuhkan pertumbuhan ekonomi. Meminta mereka "jangan tebang hutan" tanpa kompensasi memadai adalah permintaan yang tidak adil.</div></li>
-              <li><div class="li-icon">🏛️</div><div class="li-text"><strong>Kapasitas Penegakan Hukum:</strong> Kawasan hutan tropis sangat luas dan sulit dijangkau. Korupsi dan lemahnya tata kelola menyulitkan penegakan regulasi perlindungan hutan.</div></li>
-              <li><div class="li-icon">🌐</div><div class="li-text"><strong>Ketidaksepakatan Global:</strong> Konsensus internasional sulit dicapai. Negara-negara industri yang sudah kaya setelah menebang habis hutan mereka kini meminta negara berkembang untuk tidak melakukan hal yang sama — tanpa transfer teknologi dan pendanaan yang memadai.</div></li>
-            </ul>
-
-            <blockquote>
-              "Menghentikan deforestasi secara penuh bukan sekadar soal teknis — ini soal politik, ekonomi, dan keadilan global. Tapi kita tidak punya pilihan lain jika ingin melewati batas 1,5°C pemanasan global."
-              <cite>— Dr. Frances Seymour, World Resources Institute, 2022</cite>
-            </blockquote>
-
-            <div class="source-bar">
-              <span class="source-chip">WRI Forest Declaration Assessment 2023</span>
-              <span class="source-chip">Glasgow COP26 2021</span>
-              <span class="source-chip">CIFOR 2022</span>
-            </div>
+          <div class="fact-card">
+            <span class="fact-num">🇮🇩 -95%</span>
+            <span class="fact-label">Indonesia kurangi laju deforestasi dari 2,45 jt ha (2015) menjadi ~115 rb ha (2022)</span>
           </div>
+          <div class="fact-card">
+            <span class="fact-num">🇨🇷 +50%</span>
+            <span class="fact-label">Kosta Rika lipat-gandakan tutupan hutan dari 21% (1987) menjadi 52% (2019)</span>
+          </div>
+          <div class="fact-card">
+            <span class="fact-num">🌍 COP26</span>
+            <span class="fact-label">141 negara berjanji hentikan deforestasi pada 2030 — menandatangani Glasgow Forest Declaration</span>
+          </div>
+        </div>
+
+        <h4>Mengapa Sulit (Hambatan Nyata)</h4>
+        <ul class="cause-list">
+          <li><div class="li-icon">💵</div><div class="li-text"><strong>Insentif Ekonomi Kuat:</strong> Tanah bekas hutan menghasilkan komoditas bernilai miliaran dolar. Selama permintaan global untuk sawit, kedelai, daging sapi, dan kayu terus tinggi, tekanan untuk membuka hutan tidak akan hilang.</div></li>
+          <li><div class="li-icon">⚖️</div><div class="li-text"><strong>Kemiskinan & Keadilan:</strong> Negara-negara pemilik hutan tropis adalah negara berkembang yang membutuhkan pertumbuhan ekonomi. Meminta mereka "jangan tebang hutan" tanpa kompensasi memadai adalah permintaan yang tidak adil.</div></li>
+          <li><div class="li-icon">🏛️</div><div class="li-text"><strong>Kapasitas Penegakan Hukum:</strong> Kawasan hutan tropis sangat luas dan sulit dijangkau. Korupsi dan lemahnya tata kelola menyulitkan penegakan regulasi perlindungan hutan.</div></li>
+          <li><div class="li-icon">🌐</div><div class="li-text"><strong>Ketidaksepakatan Global:</strong> Konsensus internasional sulit dicapai. Negara-negara industri yang sudah kaya setelah menebang habis hutan mereka kini meminta negara berkembang untuk tidak melakukan hal yang sama — tanpa transfer teknologi dan pendanaan yang memadai.</div></li>
+        </ul>
+
+        <blockquote>
+          "Menghentikan deforestasi secara penuh bukan sekadar soal teknis — ini soal politik, ekonomi, dan keadilan global. Tapi kita tidak punya pilihan lain jika ingin melewati batas 1,5°C pemanasan global."
+          <cite>— Dr. Frances Seymour, World Resources Institute, 2022</cite>
+        </blockquote>
+
+        <div class="source-bar">
+          <span class="source-chip">WRI Forest Declaration Assessment 2023</span>
+          <span class="source-chip">Glasgow COP26 2021</span>
+          <span class="source-chip">CIFOR 2022</span>
         </div>
       </div>
     </div>
+  </div>
+</div>
 
-    <!-- Q8 -->
-    <div class="qa-card reveal" id="q8">
-      <div class="qa-card-header" onclick="toggleCard(this)">
-        <div class="q-number">08</div>
-        <div class="q-text">
-          <h3>Apa yang bisa kita lakukan untuk mengatasi deforestasi?</h3>
-          <div class="q-meta">Solusi Nyata & Aksi Konkret</div>
-        </div>
-        <div class="q-toggle">+</div>
+<!-- Q8 -->
+<div class="qa-card reveal" id="q8">
+  <div class="qa-card-header" onclick="toggleCard(this)">
+    <div class="q-number">08</div>
+    <div class="q-text">
+      <h3>Apa yang bisa kita lakukan untuk mengatasi deforestasi?</h3>
+      <div class="q-meta">Solusi Nyata & Aksi Konkret</div>
+    </div>
+    <div class="q-toggle">+</div>
+  </div>
+  <div class="qa-card-body">
+    <div class="qa-card-inner">
+
+      <div class="image-slot active-img" data-slot="q8">
+        <img class="image-preview" src="https://yaffblog.wordpress.com/wp-content/uploads/2026/05/img_1432.webp" alt="Aksi Nyata Reforestasi">
+        <div class="image-caption">Aksi nyata — kegiatan penanaman pohon dan restorasi kawasan hutan</div>
+        <div class="image-overlay">GANTI GAMBAR</div>
       </div>
-      <div class="qa-card-body">
-        <div class="qa-card-inner">
 
-          <div class="image-slot" onclick="openModal(this)" data-slot="q8">
-            <div class="slot-icon">🌱</div>
-            <div class="slot-label">Aksi Nyata — Penanaman Pohon / Reforestasi</div>
-            <div class="slot-hint">Contoh: kegiatan penanaman pohon, proyek restorasi hutan, petani hutan</div>
-            <img class="image-preview" alt="">
-            <div class="image-overlay">GANTI GAMBAR</div>
+      <div class="answer-content">
+        <p>Solusi deforestasi memerlukan pendekatan <strong>multi-level</strong> — dari kebijakan internasional hingga tindakan individu sehari-hari. Tidak ada solusi tunggal yang cukup; kombinasi berbagai strategi diperlukan.</p>
+
+        <h4>Tingkat Kebijakan & Pemerintah</h4>
+        <ul class="solution-list">
+          <li><div class="li-icon">📋</div><div class="li-text"><strong>Moratorium & Kawasan Lindung:</strong> Penetapan kawasan hutan primer sebagai kawasan lindung permanen yang tak bisa dikonversi. Indonesia sudah melakukannya — dan berhasil. Perlu diperluas dan diperkuat secara global.</div></li>
+          <li><div class="li-icon">💰</div><div class="li-text"><strong>Mekanisme REDD+ & Pembayaran Jasa Lingkungan:</strong> Program PBB yang memberikan insentif finansial kepada negara berkembang untuk menjaga hutannya. Negara kaya membayar negara berkembang atas "jasa" penyerapan karbon hutan mereka.</div></li>
+          <li><div class="li-icon">🔍</div><div class="li-text"><strong>Regulasi Rantai Pasokan:</strong> EU Deforestation Regulation (EUDR, 2023) melarang impor produk yang terkait deforestasi. Ini adalah terobosan — perusahaan harus membuktikan produk mereka bebas deforestasi sebelum masuk pasar Eropa.</div></li>
+        </ul>
+
+        <h4>Tingkat Bisnis & Industri</h4>
+        <ul class="solution-list">
+          <li><div class="li-icon">🌿</div><div class="li-text"><strong>Sertifikasi Berkelanjutan:</strong> RSPO (Roundtable on Sustainable Palm Oil), FSC (Forest Stewardship Council), dan PEFC adalah sistem sertifikasi yang memastikan produk hutan diproduksi tanpa merusak hutan.</div></li>
+          <li><div class="li-icon">🗺️</div><div class="li-text"><strong>Teknologi Pemantauan:</strong> Pemanfaatan citra satelit, drone, dan kecerdasan buatan untuk deteksi dini penebangan ilegal. Global Forest Watch memberikan data kehilangan hutan secara real-time kepada siapapun secara gratis.</div></li>
+        </ul>
+
+        <h4>Tingkat Individu (Yang Bisa Kamu Lakukan Sekarang!)</h4>
+        <div class="fact-grid">
+          <div class="fact-card">
+            <span class="fact-num">🥗</span>
+            <span class="fact-label">Kurangi konsumsi daging dan produk susu — peternakan adalah penyebab deforestasi terbesar</span>
           </div>
-
-          <div class="answer-content">
-            <p>Solusi deforestasi memerlukan pendekatan <strong>multi-level</strong> — dari kebijakan internasional hingga tindakan individu sehari-hari. Tidak ada solusi tunggal yang cukup; kombinasi berbagai strategi diperlukan.</p>
-
-            <h4>Tingkat Kebijakan & Pemerintah</h4>
-            <ul class="solution-list">
-              <li><div class="li-icon">📋</div><div class="li-text"><strong>Moratorium & Kawasan Lindung:</strong> Penetapan kawasan hutan primer sebagai kawasan lindung permanen yang tak bisa dikonversi. Indonesia sudah melakukannya — dan berhasil. Perlu diperluas dan diperkuat secara global.</div></li>
-              <li><div class="li-icon">💰</div><div class="li-text"><strong>Mekanisme REDD+ & Pembayaran Jasa Lingkungan:</strong> Program PBB yang memberikan insentif finansial kepada negara berkembang untuk menjaga hutannya. Negara kaya membayar negara berkembang atas "jasa" penyerapan karbon hutan mereka.</div></li>
-              <li><div class="li-icon">🔍</div><div class="li-text"><strong>Regulasi Rantai Pasokan:</strong> EU Deforestation Regulation (EUDR, 2023) melarang impor produk yang terkait deforestasi. Ini adalah terobosan — perusahaan harus membuktikan produk mereka bebas deforestasi sebelum masuk pasar Eropa.</div></li>
-            </ul>
-
-            <h4>Tingkat Bisnis & Industri</h4>
-            <ul class="solution-list">
-              <li><div class="li-icon">🌿</div><div class="li-text"><strong>Sertifikasi Berkelanjutan:</strong> RSPO (Roundtable on Sustainable Palm Oil), FSC (Forest Stewardship Council), dan PEFC adalah sistem sertifikasi yang memastikan produk hutan diproduksi tanpa merusak hutan.</div></li>
-              <li><div class="li-icon">🗺️</div><div class="li-text"><strong>Teknologi Pemantauan:</strong> Pemanfaatan citra satelit, drone, dan kecerdasan buatan untuk deteksi dini penebangan ilegal. Global Forest Watch memberikan data kehilangan hutan secara real-time kepada siapapun secara gratis.</div></li>
-            </ul>
-
-            <h4>Tingkat Individu (Yang Bisa Kamu Lakukan Sekarang!)</h4>
-            <div class="fact-grid">
-              <div class="fact-card">
-                <span class="fact-num">🥗</span>
-                <span class="fact-label">Kurangi konsumsi daging dan produk susu — peternakan adalah penyebab deforestasi terbesar</span>
-              </div>
-              <div class="fact-card">
-                <span class="fact-num">🛒</span>
-                <span class="fact-label">Pilih produk bersertifikat RSPO/FSC — dari minyak goreng hingga kertas dan kayu</span>
-              </div>
-              <div class="fact-card">
-                <span class="fact-num">🌳</span>
-                <span class="fact-label">Dukung program reforestasi lokal — tanam pohon atau donasi ke organisasi terpercaya</span>
-              </div>
-              <div class="fact-card">
-                <span class="fact-num">📣</span>
-                <span class="fact-label">Advokasi & Edukasi — suarakan isu ini, dukung kebijakan pro-hutan, dan didik orang-orang di sekitarmu</span>
-              </div>
-              <div class="fact-card">
-                <span class="fact-num">♻️</span>
-                <span class="fact-label">Kurangi penggunaan kertas sekali pakai — pilih digital, gunakan ulang, daur ulang</span>
-              </div>
-              <div class="fact-card">
-                <span class="fact-num">🔋</span>
-                <span class="fact-label">Dukung energi terbarukan — kurangi ketergantungan pada bahan bakar fosil yang mendorong ekspansi tambang di hutan</span>
-              </div>
-            </div>
-
-            <div class="highlight-box">
-              <p>Studi terbaru (Science, 2023) menunjukkan bahwa <strong>restorasi 30% lahan terdegradasi</strong> di seluruh dunia dapat menyerap 465 GtCO₂ — lebih dari cukup untuk memenuhi target iklim Paris, sekaligus mencegah kepunahan 70% spesies yang terancam.</p>
-            </div>
-
-            <div class="source-bar">
-              <span class="source-chip">Science (2023) doi:10.1126/science.abn9668</span>
-              <span class="source-chip">EU Deforestation Regulation 2023</span>
-              <span class="source-chip">RSPO Annual Report 2022</span>
-            </div>
+          <div class="fact-card">
+            <span class="fact-num">🛒</span>
+            <span class="fact-label">Pilih produk bersertifikat RSPO/FSC — dari minyak goreng hingga kertas dan kayu</span>
           </div>
+          <div class="fact-card">
+            <span class="fact-num">🌳</span>
+            <span class="fact-label">Dukung program reforestasi lokal — tanam pohon atau donasi ke organisasi terpercaya</span>
+          </div>
+          <div class="fact-card">
+            <span class="fact-num">📣</span>
+            <span class="fact-label">Advokasi & Edukasi — suarakan isu ini, dukung kebijakan pro-hutan, dan didik orang-orang di sekitarmu</span>
+          </div>
+          <div class="fact-card">
+            <span class="fact-num">♻️</span>
+            <span class="fact-label">Kurangi penggunaan kertas sekali pakai — pilih digital, gunakan ulang, daur ulang</span>
+          </div>
+          <div class="fact-card">
+            <span class="fact-num">🔋</span>
+            <span class="fact-label">Dukung energi terbarukan — kurangi ketergantungan pada bahan bakar fosil yang mendorong ekspansi tambang di hutan</span>
+          </div>
+        </div>
+
+        <div class="highlight-box">
+          <p>Studi terbaru (Science, 2023) menunjukkan bahwa <strong>restorasi 30% lahan terdegradasi</strong> di seluruh dunia dapat menyerap 465 GtCO₂ — lebih dari cukup untuk memenuhi target iklim Paris, sekaligus mencegah kepunahan 70% spesies yang terancam.</p>
+        </div>
+
+        <div class="source-bar">
+          <span class="source-chip">Science (2023) doi:10.1126/science.abn9668</span>
+          <span class="source-chip">EU Deforestation Regulation 2023</span>
+          <span class="source-chip">RSPO Annual Report 2022</span>
         </div>
       </div>
     </div>
+  </div>
+</div>
 
-    <!-- Q9 -->
-    <div class="qa-card reveal" id="q9">
-      <div class="qa-card-header" onclick="toggleCard(this)">
-        <div class="q-number">09</div>
-        <div class="q-text">
-          <h3>Apakah ada hubungan deforestasi dengan perubahan iklim?</h3>
-          <div class="q-meta">Hubungan Dua Arah: Penyebab & Diperparah Iklim</div>
-        </div>
-        <div class="q-toggle">+</div>
+<!-- Q9 -->
+<div class="qa-card reveal" id="q9">
+  <div class="qa-card-header" onclick="toggleCard(this)">
+    <div class="q-number">09</div>
+    <div class="q-text">
+      <h3>Apakah ada hubungan deforestasi dengan perubahan iklim?</h3>
+      <div class="q-meta">Hubungan Dua Arah: Penyebab & Diperparah Iklim</div>
+    </div>
+    <div class="q-toggle">+</div>
+  </div>
+  <div class="qa-card-body">
+    <div class="qa-card-inner">
+
+      <div class="image-slot active-img" data-slot="q9">
+        <img class="image-preview" src="https://yaffblog.wordpress.com/wp-content/uploads/2026/05/img_1433.png" alt="Diagram Siklus Karbon">
+        <div class="image-caption">Diagram siklus karbon — hubungan hutan dan perubahan iklim</div>
+        <div class="image-overlay">GANTI GAMBAR</div>
       </div>
-      <div class="qa-card-body">
-        <div class="qa-card-inner">
 
-          <div class="image-slot" onclick="openModal(this)" data-slot="q9">
-            <div class="slot-icon">🌡️</div>
-            <div class="slot-label">Infografis Karbon Hutan / Perubahan Iklim</div>
-            <div class="slot-hint">Contoh: diagram siklus karbon, grafik suhu global vs kehilangan hutan</div>
-            <img class="image-preview" alt="">
-            <div class="image-overlay">GANTI GAMBAR</div>
-          </div>
+      <div class="answer-content">
+        <p><strong>Ya — hubungannya sangat erat, dua arah, dan saling memperkuat</strong>. Ini adalah salah satu contoh <em>umpan balik positif</em> (positive feedback loop) paling berbahaya dalam sistem bumi kita.</p>
 
-          <div class="answer-content">
-            <p><strong>Ya — hubungannya sangat erat, dua arah, dan saling memperkuat</strong>. Ini adalah salah satu contoh <em>umpan balik positif</em> (positive feedback loop) paling berbahaya dalam sistem bumi kita.</p>
+        <h4>Hubungan 1: Deforestasi → Perubahan Iklim</h4>
+        <ul class="cause-list">
+          <li><div class="li-icon">🌲</div><div class="li-text"><strong>Hutan sebagai Penyimpan Karbon:</strong> Hutan dunia menyimpan sekitar 861 gigaton karbon (IPCC, 2019) — lebih dari dua kali lipat total karbon di atmosfer saat ini. Ketika hutan ditebang atau dibakar, karbon ini dilepaskan sebagai CO₂.</div></li>
+          <li><div class="li-icon">📊</div><div class="li-text"><strong>Angka Kontribusi Emisi:</strong> Deforestasi dan degradasi lahan menyumbang <strong>10-15% emisi GRK global</strong> per tahun (IPCC AR6, 2022). Ini setara dengan emisi semua kendaraan darat di seluruh dunia.</div></li>
+          <li><div class="li-icon">🌊</div><div class="li-text"><strong>Hilangnya "Penyerap" Karbon:</strong> Hutan yang sehat secara aktif menyerap CO₂ dari atmosfer. Kehilangan hutan berarti kita kehilangan "vacuum cleaner" karbon alami yang sangat kita butuhkan.</div></li>
+          <li><div class="li-icon">☁️</div><div class="li-text"><strong>Gangguan Siklus Air:</strong> Deforestasi Amazon mengurangi curah hujan di Amazon sendiri dan bahkan mempengaruhi pola curah hujan di Amerika Selatan, memperparah kekeringan — fenomena yang disebut "dieback" atau kematian massal hutan secara bertahap.</div></li>
+        </ul>
 
-            <h4>Hubungan 1: Deforestasi → Perubahan Iklim</h4>
-            <ul class="cause-list">
-              <li><div class="li-icon">🌲</div><div class="li-text"><strong>Hutan sebagai Penyimpan Karbon:</strong> Hutan dunia menyimpan sekitar 861 gigaton karbon (IPCC, 2019) — lebih dari dua kali lipat total karbon di atmosfer saat ini. Ketika hutan ditebang atau dibakar, karbon ini dilepaskan sebagai CO₂.</div></li>
-              <li><div class="li-icon">📊</div><div class="li-text"><strong>Angka Kontribusi Emisi:</strong> Deforestasi dan degradasi lahan menyumbang <strong>10-15% emisi GRK global</strong> per tahun (IPCC AR6, 2022). Ini setara dengan emisi semua kendaraan darat di seluruh dunia.</div></li>
-              <li><div class="li-icon">🌊</div><div class="li-text"><strong>Hilangnya "Penyerap" Karbon:</strong> Hutan yang sehat secara aktif menyerap CO₂ dari atmosfer. Kehilangan hutan berarti kita kehilangan "vacuum cleaner" karbon alami yang sangat kita butuhkan.</div></li>
-              <li><div class="li-icon">☁️</div><div class="li-text"><strong>Gangguan Siklus Air:</strong> Deforestasi Amazon mengurangi curah hujan di Amazon sendiri dan bahkan mempengaruhi pola curah hujan di Amerika Selatan, memperparah kekeringan — fenomena yang disebut "dieback" atau kematian massal hutan secara bertahap.</div></li>
-            </ul>
+        <h4>Hubungan 2: Perubahan Iklim → Memperparah Deforestasi</h4>
+        <ul class="cause-list">
+          <li><div class="li-icon">🔥</div><div class="li-text"><strong>Peningkatan Risiko Kebakaran:</strong> Suhu yang lebih tinggi dan kekeringan yang lebih panjang akibat perubahan iklim membuat hutan lebih mudah terbakar. Kebakaran Amazon 2019, Australia 2020, dan Siberia 2021 semuanya diperkuat oleh perubahan iklim.</div></li>
+          <li><div class="li-icon">🐛</div><div class="li-text"><strong>Serangan Hama & Penyakit:</strong> Pemanasan global memungkinkan hama seperti bark beetle berkembang di iklim yang sebelumnya terlalu dingin, menghancurkan jutaan pohon di hutan boreal Kanada dan Skandinavia.</div></li>
+          <li><div class="li-icon">🌀</div><div class="li-text"><strong>Badai & Peristiwa Ekstrem:</strong> Badai yang lebih kuat akibat lautan yang lebih hangat dapat menghancurkan kawasan hutan yang luas, membuka celah bagi perambah dan penebang liar.</div></li>
+        </ul>
 
-            <h4>Hubungan 2: Perubahan Iklim → Memperparah Deforestasi</h4>
-            <ul class="cause-list">
-              <li><div class="li-icon">🔥</div><div class="li-text"><strong>Peningkatan Risiko Kebakaran:</strong> Suhu yang lebih tinggi dan kekeringan yang lebih panjang akibat perubahan iklim membuat hutan lebih mudah terbakar. Kebakaran Amazon 2019, Australia 2020, dan Siberia 2021 semuanya diperkuat oleh perubahan iklim.</div></li>
-              <li><div class="li-icon">🐛</div><div class="li-text"><strong>Serangan Hama & Penyakit:</strong> Pemanasan global memungkinkan hama seperti bark beetle berkembang di iklim yang sebelumnya terlalu dingin, menghancurkan jutaan pohon di hutan boreal Kanada dan Skandinavia.</div></li>
-              <li><div class="li-icon">🌀</div><div class="li-text"><strong>Badai & Peristiwa Ekstrem:</strong> Badai yang lebih kuat akibat lautan yang lebih hangat dapat menghancurkan kawasan hutan yang luas, membuka celah bagi perambah dan penebang liar.</div></li>
-            </ul>
+        <div class="highlight-box">
+          <p>Titik kritis (tipping point): Para ilmuwan memperingatkan bahwa Amazon bisa mencapai <strong>titik kolaps ekologis</strong> jika deforestasi melampaui 20-25% dari luasnya (saat ini sudah 17%). Di titik ini, hutan tidak bisa lagi menciptakan cukup hujan untuk mempertahankan dirinya sendiri, dan akan berubah menjadi sabana secara permanen — melepaskan 90 gigaton karbon sekaligus. (Nature Climate Change, 2022)</p>
+        </div>
 
-            <div class="highlight-box">
-              <p>Titik kritis (tipping point): Para ilmuwan memperingatkan bahwa Amazon bisa mencapai <strong>titik kolaps ekologis</strong> jika deforestasi melampaui 20-25% dari luasnya (saat ini sudah 17%). Di titik ini, hutan tidak bisa lagi menciptakan cukup hujan untuk mempertahankan dirinya sendiri, dan akan berubah menjadi sabana secara permanen — melepaskan 90 gigaton karbon sekaligus. (Nature Climate Change, 2022)</p>
-            </div>
+        <blockquote>
+          "Kita tidak bisa mengatasi perubahan iklim tanpa menghentikan deforestasi. Dan kita tidak bisa menghentikan deforestasi tanpa mengatasi perubahan iklim. Keduanya harus ditangani bersama-sama, sekarang."
+          <cite>— Dr. Paulo Moutinho, Peneliti Senior IPAM (Amazon Environmental Research Institute)</cite>
+        </blockquote>
 
-            <blockquote>
-              "Kita tidak bisa mengatasi perubahan iklim tanpa menghentikan deforestasi. Dan kita tidak bisa menghentikan deforestasi tanpa mengatasi perubahan iklim. Keduanya harus ditangani bersama-sama, sekarang."
-              <cite>— Dr. Paulo Moutinho, Peneliti Senior IPAM (Amazon Environmental Research Institute)</cite>
-            </blockquote>
-
-            <div class="source-bar">
-              <span class="source-chip">IPCC AR6 WG1 2021</span>
-              <span class="source-chip">Nature Climate Change (2022)</span>
-              <span class="source-chip">Science (2021) Amazon Dieback</span>
-            </div>
-          </div>
+        <div class="source-bar">
+          <span class="source-chip">IPCC AR6 WG1 2021</span>
+          <span class="source-chip">Nature Climate Change (2022)</span>
+          <span class="source-chip">Science (2021) Amazon Dieback</span>
         </div>
       </div>
     </div>
+  </div>
+</div>
 
-    <!-- Q10 -->
-    <div class="qa-card reveal" id="q10">
-      <div class="qa-card-header" onclick="toggleCard(this)">
-        <div class="q-number">10</div>
-        <div class="q-text">
-          <h3>Apakah kita perlu peduli terhadap persoalan deforestasi?</h3>
-          <div class="q-meta">Urgensi & Relevansi Personal</div>
-        </div>
-        <div class="q-toggle">+</div>
+<!-- Q10 -->
+<div class="qa-card reveal" id="q10">
+  <div class="qa-card-header" onclick="toggleCard(this)">
+    <div class="q-number">10</div>
+    <div class="q-text">
+      <h3>Apakah kita perlu peduli terhadap persoalan deforestasi?</h3>
+      <div class="q-meta">Urgensi & Relevansi Personal</div>
+    </div>
+    <div class="q-toggle">+</div>
+  </div>
+  <div class="qa-card-body">
+    <div class="qa-card-inner">
+
+      <div class="image-slot active-img" data-slot="q10">
+        <img class="image-preview" src="https://yaffblog.wordpress.com/wp-content/uploads/2026/05/img_1434.jpeg" alt="Mengapa Harus Peduli">
+        <div class="image-caption">Kepedulian terhadap hutan adalah kepedulian terhadap masa depan kita bersama</div>
+        <div class="image-overlay">GANTI GAMBAR</div>
       </div>
-      <div class="qa-card-body">
-        <div class="qa-card-inner">
 
-          <div class="image-slot" onclick="openModal(this)" data-slot="q10">
-            <div class="slot-icon">💚</div>
-            <div class="slot-label">Mengapa Harus Peduli</div>
-            <div class="slot-hint">Contoh: anak-anak bermain di hutan, generasi muda berdemonstrasi untuk iklim</div>
-            <img class="image-preview" alt="">
-            <div class="image-overlay">GANTI GAMBAR</div>
-          </div>
+      <div class="answer-content">
+        <p><strong>Ya — kita semua wajib peduli</strong>. Bukan semata karena perasaan kasihan terhadap pohon atau satwa, tetapi karena deforestasi secara langsung dan nyata mengancam kualitas hidup kita dan keberlangsungan peradaban manusia.</p>
 
-          <div class="answer-content">
-            <p><strong>Ya — kita semua wajib peduli</strong>. Bukan semata karena perasaan kasihan terhadap pohon atau satwa, tetapi karena deforestasi secara langsung dan nyata mengancam kualitas hidup kita dan keberlangsungan peradaban manusia.</p>
+        <h4>Alasan Praktis Mengapa Kamu Harus Peduli</h4>
+        <ul class="solution-list">
+          <li><div class="li-icon">🌬️</div><div class="li-text"><strong>Oksigen yang Kamu Hirup:</strong> Hutan tropis menghasilkan 28% oksigen di atmosfer bumi. Setiap kali kamu bernapas, sebagian dari oksigen itu berasal dari hutan yang sekarang sedang terancam.</div></li>
+          <li><div class="li-icon">💧</div><div class="li-text"><strong>Air yang Kamu Minum:</strong> 75% air bersih dunia diatur oleh ekosistem hutan. Deforestasi mengancam ketersediaan dan kualitas air minum, tidak hanya di desa-desa terpencil, tetapi juga di kota-kota besar.</div></li>
+          <li><div class="li-icon">🍽️</div><div class="li-text"><strong>Makanan di Piringmu:</strong> Penyerbuk (lebah, kupu-kupu) yang hidup di hutan menyerbuki 75% tanaman pangan kita. Obat-obatan modern — 25% di antaranya berasal dari tanaman hutan. Deforestasi mengancam kedua hal ini.</div></li>
+          <li><div class="li-icon">🏥</div><div class="li-text"><strong>Kesehatanmu:</strong> Kebakaran hutan menghasilkan polusi udara yang menyebabkan ISPA, kanker paru, dan kematian dini. Di Indonesia, asap kebakaran 2015 menyebabkan 100.000 kematian prematur menurut penelitian Harvard T.H. Chan School of Public Health.</div></li>
+          <li><div class="li-icon">🌡️</div><div class="li-text"><strong>Stabilitas Iklim:</strong> Jika hutan terus ditebang dalam laju saat ini, target Paris Agreement 1,5°C menjadi mustahil dicapai. Konsekuensinya — gelombang panas ekstrem, banjir besar, badai dahsyat, dan kenaikan permukaan laut yang mengancam jutaan jiwa.</div></li>
+          <li><div class="li-icon">💊</div><div class="li-text"><strong>Potensi Medis yang Belum Ditemukan:</strong> Hutan tropis menyimpan mungkin 50% spesies belum ditemukan manusia. Di dalamnya tersimpan potensi obat kanker, antivirus, dan antibiotik masa depan. Sekali hutan itu hilang, kemungkinan penemuan itu hilang selamanya.</div></li>
+        </ul>
 
-            <h4>Alasan Praktis Mengapa Kamu Harus Peduli</h4>
-            <ul class="solution-list">
-              <li><div class="li-icon">🌬️</div><div class="li-text"><strong>Oksigen yang Kamu Hirup:</strong> Hutan tropis menghasilkan 28% oksigen di atmosfer bumi. Setiap kali kamu bernapas, sebagian dari oksigen itu berasal dari hutan yang sekarang sedang terancam.</div></li>
-              <li><div class="li-icon">💧</div><div class="li-text"><strong>Air yang Kamu Minum:</strong> 75% air bersih dunia diatur oleh ekosistem hutan. Deforestasi mengancam ketersediaan dan kualitas air minum, tidak hanya di desa-desa terpencil, tetapi juga di kota-kota besar.</div></li>
-              <li><div class="li-icon">🍽️</div><div class="li-text"><strong>Makanan di Piringmu:</strong> Penyerbuk (lebah, kupu-kupu) yang hidup di hutan menyerbuki 75% tanaman pangan kita. Obat-obatan modern — 25% di antaranya berasal dari tanaman hutan. Deforestasi mengancam kedua hal ini.</div></li>
-              <li><div class="li-icon">🏥</div><div class="li-text"><strong>Kesehatanmu:</strong> Kebakaran hutan menghasilkan polusi udara yang menyebabkan ISPA, kanker paru, dan kematian dini. Di Indonesia, asap kebakaran 2015 menyebabkan 100.000 kematian prematur menurut penelitian Harvard T.H. Chan School of Public Health.</div></li>
-              <li><div class="li-icon">🌡️</div><div class="li-text"><strong>Stabilitas Iklim:</strong> Jika hutan terus ditebang dalam laju saat ini, target Paris Agreement 1,5°C menjadi mustahil dicapai. Konsekuensinya — gelombang panas ekstrem, banjir besar, badai dahsyat, dan kenaikan permukaan laut yang mengancam jutaan jiwa.</div></li>
-              <li><div class="li-icon">💊</div><div class="li-text"><strong>Potensi Medis yang Belum Ditemukan:</strong> Hutan tropis menyimpan mungkin 50% spesies belum ditemukan manusia. Di dalamnya tersimpan potensi obat kanker, antivirus, dan antibiotik masa depan. Sekali hutan itu hilang, kemungkinan penemuan itu hilang selamanya.</div></li>
-            </ul>
+        <div class="highlight-box">
+          <p>Kepedulian terhadap hutan bukan sekadar kepedulian terhadap "alam" yang jauh di sana. Ini adalah kepedulian terhadap dirimu sendiri, keluargamu, dan semua generasi yang akan datang setelahmu. Hutan bukan milik masa lalu — ia adalah investasi masa depan.</p>
+        </div>
 
-            <div class="highlight-box">
-              <p>Kepedulian terhadap hutan bukan sekadar kepedulian terhadap "alam" yang jauh di sana. Ini adalah kepedulian terhadap dirimu sendiri, keluargamu, dan semua generasi yang akan datang setelahmu. Hutan bukan milik masa lalu — ia adalah investasi masa depan.</p>
-            </div>
+        <blockquote>
+          "Generasi kita adalah generasi pertama yang merasakan dampak nyata perubahan iklim, dan yang terakhir yang bisa melakukan sesuatu yang berarti untuk menghentikannya."
+          <cite>— Ban Ki-moon, Mantan Sekretaris Jenderal PBB</cite>
+        </blockquote>
 
-            <blockquote>
-              "Generasi kita adalah generasi pertama yang merasakan dampak nyata perubahan iklim, dan yang terakhir yang bisa melakukan sesuatu yang berarti untuk menghentikannya."
-              <cite>— Ban Ki-moon, Mantan Sekretaris Jenderal PBB</cite>
-            </blockquote>
-
-            <div class="source-bar">
-              <span class="source-chip">Harvard T.H. Chan SPH 2016</span>
-              <span class="source-chip">WHO Forest & Health 2021</span>
-              <span class="source-chip">IPBES Global Assessment 2019</span>
-            </div>
-          </div>
+        <div class="source-bar">
+          <span class="source-chip">Harvard T.H. Chan SPH 2016</span>
+          <span class="source-chip">WHO Forest & Health 2021</span>
+          <span class="source-chip">IPBES Global Assessment 2019</span>
         </div>
       </div>
     </div>
+  </div>
+</div>
 
-    <!-- Q11 -->
-    <div class="qa-card reveal" id="q11">
-      <div class="qa-card-header" onclick="toggleCard(this)">
-        <div class="q-number">11</div>
-        <div class="q-text">
-          <h3>Bagaimana bisa disimpulkan bahwa hutan akan hilang dalam 100 tahun? Apa yang dilakukan untuk mengambil kesimpulan itu?</h3>
-          <div class="q-meta">Metodologi Ilmiah & Proyeksi</div>
-        </div>
-        <div class="q-toggle">+</div>
+<!-- Q11 -->
+<div class="qa-card reveal" id="q11">
+  <div class="qa-card-header" onclick="toggleCard(this)">
+    <div class="q-number">11</div>
+    <div class="q-text">
+      <h3>Bagaimana bisa disimpulkan bahwa hutan akan hilang dalam 100 tahun? Apa yang dilakukan untuk mengambil kesimpulan itu?</h3>
+      <div class="q-meta">Metodologi Ilmiah & Proyeksi</div>
+    </div>
+    <div class="q-toggle">+</div>
+  </div>
+  <div class="qa-card-body">
+    <div class="qa-card-inner">
+
+      <div class="image-slot active-img" data-slot="q11">
+        <img class="image-preview" src="https://yaffblog.wordpress.com/wp-content/uploads/2026/05/img_1435.png" alt="Grafik Proyeksi Penutupan Hutan">
+        <div class="image-caption">Grafik proyeksi penutupan hutan global berdasarkan berbagai skenario kebijakan</div>
+        <div class="image-overlay">GANTI GAMBAR</div>
       </div>
-      <div class="qa-card-body">
-        <div class="qa-card-inner">
 
-          <div class="image-slot" onclick="openModal(this)" data-slot="q11">
-            <div class="slot-icon">🔭</div>
-            <div class="slot-label">Data Saintifik / Proyeksi Hutan</div>
-            <div class="slot-hint">Contoh: grafik proyeksi tutupan hutan, citra satelit perubahan tutupan lahan, laboratorium riset</div>
-            <img class="image-preview" alt="">
-            <div class="image-overlay">GANTI GAMBAR</div>
+      <div class="answer-content">
+        <p>Kesimpulan tentang laju dan masa depan deforestasi dihasilkan melalui <strong>proses ilmiah yang ketat dan multi-disiplin</strong>. Ini bukan sekadar perkiraan — melainkan proyeksi berbasis data dan model yang sudah divalidasi.</p>
+
+        <h4>Bagaimana Ilmuwan Mengukur Deforestasi?</h4>
+        <ul class="cause-list">
+          <li>
+            <div class="li-icon">🛸</div>
+            <div class="li-text">
+              <strong>Penginderaan Jauh (Remote Sensing) & Satelit:</strong><br>
+              Sistem seperti <em>Landsat</em> (NASA), <em>MODIS</em>, dan <em>Sentinel</em> (ESA) mengambil gambar seluruh permukaan bumi setiap hari. Algoritma komputer membandingkan gambar dari tahun ke tahun untuk mendeteksi perubahan tutupan pohon secara otomatis. <strong>Global Forest Watch</strong> mengintegrasikan semua data ini dan menyajikannya secara real-time untuk publik.
+            </div>
+          </li>
+          <li>
+            <div class="li-icon">📐</div>
+            <div class="li-text">
+              <strong>Pemodelan Matematika & Statistik:</strong><br>
+              Ilmuwan menggunakan data historis laju deforestasi, dikombinasikan dengan model pertumbuhan populasi, ekonomi, dan tren penggunaan lahan, untuk memproyeksikan masa depan. Model ini divalidasi dengan data empiris lapangan dan disesuaikan secara berkala.
+            </div>
+          </li>
+          <li>
+            <div class="li-icon">🔬</div>
+            <div class="li-text">
+              <strong>Penelitian Lapangan & Inventarisasi Hutan:</strong><br>
+              FAO mengkoordinasikan <em>Global Forest Resources Assessment</em> setiap 5 tahun, di mana ribuan peneliti di seluruh dunia mengukur hutan secara langsung — menghitung pohon, mengukur biomassa, dan mencatat perubahan. Data ini menjadi fondasi untuk proyeksi global.
+            </div>
+          </li>
+        </ul>
+
+        <h4>Apa Kata Proyeksi Ilmiah?</h4>
+
+        <div class="chart-wrap">
+          <div class="chart-title">Proyeksi Tutupan Hutan Tropis Global (% dari Luas 2000)</div>
+          <svg class="chart-svg" viewBox="0 0 600 160" xmlns="http://www.w3.org/2000/svg">
+            <line x1="60" y1="20" x2="560" y2="20" stroke="rgba(106,177,135,0.1)" stroke-width="1"/>
+            <line x1="60" y1="55" x2="560" y2="55" stroke="rgba(106,177,135,0.1)" stroke-width="1"/>
+            <line x1="60" y1="90" x2="560" y2="90" stroke="rgba(106,177,135,0.1)" stroke-width="1"/>
+            <line x1="60" y1="125" x2="560" y2="125" stroke="rgba(106,177,135,0.1)" stroke-width="1"/>
+            <text x="50" y="24" fill="#6ab187" font-size="10" text-anchor="end" font-family="monospace">100%</text>
+            <text x="50" y="59" fill="#6ab187" font-size="10" text-anchor="end" font-family="monospace">75%</text>
+            <text x="50" y="94" fill="#6ab187" font-size="10" text-anchor="end" font-family="monospace">50%</text>
+            <text x="50" y="129" fill="#6ab187" font-size="10" text-anchor="end" font-family="monospace">25%</text>
+            <text x="60" y="150" fill="#b8c4bb" font-size="9" text-anchor="middle" font-family="monospace">2000</text>
+            <text x="160" y="150" fill="#b8c4bb" font-size="9" text-anchor="middle" font-family="monospace">2020</text>
+            <text x="260" y="150" fill="#b8c4bb" font-size="9" text-anchor="middle" font-family="monospace">2040</text>
+            <text x="360" y="150" fill="#b8c4bb" font-size="9" text-anchor="middle" font-family="monospace">2060</text>
+            <text x="460" y="150" fill="#b8c4bb" font-size="9" text-anchor="middle" font-family="monospace">2080</text>
+            <text x="560" y="150" fill="#b8c4bb" font-size="9" text-anchor="middle" font-family="monospace">2100</text>
+            <polyline points="60,20 160,40 260,68 360,100 460,132 560,155" fill="none" stroke="#c0392b" stroke-width="2" stroke-dasharray="5,3"/>
+            <polyline points="60,20 160,30 260,38 360,42 460,40 560,35" fill="none" stroke="#6ab187" stroke-width="2"/>
+            <polyline points="60,20 160,36 260,52" fill="none" stroke="#d4a843" stroke-width="2.5"/>
+            <circle cx="260" cy="52" r="4" fill="#d4a843"/>
+            <text x="270" y="50" fill="#d4a843" font-size="9" font-family="monospace">KINI</text>
+            <line x1="65" y1="10" x2="90" y2="10" stroke="#c0392b" stroke-width="2" stroke-dasharray="5,3"/>
+            <text x="95" y="14" fill="#b8c4bb" font-size="9" font-family="monospace">Tanpa aksi (BAU)</text>
+            <line x1="220" y1="10" x2="245" y2="10" stroke="#6ab187" stroke-width="2"/>
+            <text x="250" y="14" fill="#b8c4bb" font-size="9" font-family="monospace">Skenario terbaik</text>
+          </svg>
+        </div>
+
+        <p>Dalam skenario <em>Business as Usual</em> (tanpa perubahan kebijakan signifikan), proyeksi menunjukkan:</p>
+        <div class="fact-grid">
+          <div class="fact-card">
+            <span class="fact-num">2050</span>
+            <span class="fact-label">Amazon bisa mencapai titik kolaps jika deforestasi melampaui 20-25% (Nature, 2022)</span>
           </div>
-
-          <div class="answer-content">
-            <p>Kesimpulan tentang laju dan masa depan deforestasi dihasilkan melalui <strong>proses ilmiah yang ketat dan multi-disiplin</strong>. Ini bukan sekadar perkiraan — melainkan proyeksi berbasis data dan model yang sudah divalidasi.</p>
-
-            <h4>Bagaimana Ilmuwan Mengukur Deforestasi?</h4>
-            <ul class="cause-list">
-              <li>
-                <div class="li-icon">🛸</div>
-                <div class="li-text">
-                  <strong>Penginderaan Jauh (Remote Sensing) & Satelit:</strong><br>
-                  Sistem seperti <em>Landsat</em> (NASA), <em>MODIS</em>, dan <em>Sentinel</em> (ESA) mengambil gambar seluruh permukaan bumi setiap hari. Algoritma komputer membandingkan gambar dari tahun ke tahun untuk mendeteksi perubahan tutupan pohon secara otomatis. <strong>Global Forest Watch</strong> mengintegrasikan semua data ini dan menyajikannya secara real-time untuk publik.
-                </div>
-              </li>
-              <li>
-                <div class="li-icon">📐</div>
-                <div class="li-text">
-                  <strong>Pemodelan Matematika & Statistik:</strong><br>
-                  Ilmuwan menggunakan data historis laju deforestasi, dikombinasikan dengan model pertumbuhan populasi, ekonomi, dan tren penggunaan lahan, untuk memproyeksikan masa depan. Model ini divalidasi dengan data empiris lapangan dan disesuaikan secara berkala.
-                </div>
-              </li>
-              <li>
-                <div class="li-icon">🔬</div>
-                <div class="li-text">
-                  <strong>Penelitian Lapangan & Inventarisasi Hutan:</strong><br>
-                  FAO mengkoordinasikan <em>Global Forest Resources Assessment</em> setiap 5 tahun, di mana ribuan peneliti di seluruh dunia mengukur hutan secara langsung — menghitung pohon, mengukur biomassa, dan mencatat perubahan. Data ini menjadi fondasi untuk proyeksi global.
-                </div>
-              </li>
-            </ul>
-
-            <h4>Apa Kata Proyeksi Ilmiah?</h4>
-
-            <div class="chart-wrap">
-              <div class="chart-title">Proyeksi Tutupan Hutan Tropis Global (% dari Luas 2000)</div>
-              <svg class="chart-svg" viewBox="0 0 600 160" xmlns="http://www.w3.org/2000/svg">
-                <!-- Grid lines -->
-                <line x1="60" y1="20" x2="560" y2="20" stroke="rgba(106,177,135,0.1)" stroke-width="1"/>
-                <line x1="60" y1="55" x2="560" y2="55" stroke="rgba(106,177,135,0.1)" stroke-width="1"/>
-                <line x1="60" y1="90" x2="560" y2="90" stroke="rgba(106,177,135,0.1)" stroke-width="1"/>
-                <line x1="60" y1="125" x2="560" y2="125" stroke="rgba(106,177,135,0.1)" stroke-width="1"/>
-                <!-- Y Labels -->
-                <text x="50" y="24" fill="#6ab187" font-size="10" text-anchor="end" font-family="monospace">100%</text>
-                <text x="50" y="59" fill="#6ab187" font-size="10" text-anchor="end" font-family="monospace">75%</text>
-                <text x="50" y="94" fill="#6ab187" font-size="10" text-anchor="end" font-family="monospace">50%</text>
-                <text x="50" y="129" fill="#6ab187" font-size="10" text-anchor="end" font-family="monospace">25%</text>
-                <!-- X Labels -->
-                <text x="60" y="150" fill="#b8c4bb" font-size="9" text-anchor="middle" font-family="monospace">2000</text>
-                <text x="160" y="150" fill="#b8c4bb" font-size="9" text-anchor="middle" font-family="monospace">2020</text>
-                <text x="260" y="150" fill="#b8c4bb" font-size="9" text-anchor="middle" font-family="monospace">2040</text>
-                <text x="360" y="150" fill="#b8c4bb" font-size="9" text-anchor="middle" font-family="monospace">2060</text>
-                <text x="460" y="150" fill="#b8c4bb" font-size="9" text-anchor="middle" font-family="monospace">2080</text>
-                <text x="560" y="150" fill="#b8c4bb" font-size="9" text-anchor="middle" font-family="monospace">2100</text>
-                <!-- BAU line (business as usual) -->
-                <polyline points="60,20 160,40 260,68 360,100 460,132 560,155" fill="none" stroke="#c0392b" stroke-width="2" stroke-dasharray="5,3"/>
-                <!-- Best case line -->
-                <polyline points="60,20 160,30 260,38 360,42 460,40 560,35" fill="none" stroke="#6ab187" stroke-width="2"/>
-                <!-- Current trend line -->
-                <polyline points="60,20 160,36 260,52" fill="none" stroke="#d4a843" stroke-width="2.5"/>
-                <circle cx="260" cy="52" r="4" fill="#d4a843"/>
-                <text x="270" y="50" fill="#d4a843" font-size="9" font-family="monospace">KINI</text>
-                <!-- Legend -->
-                <line x1="65" y1="10" x2="90" y2="10" stroke="#c0392b" stroke-width="2" stroke-dasharray="5,3"/>
-                <text x="95" y="14" fill="#b8c4bb" font-size="9" font-family="monospace">Tanpa aksi (BAU)</text>
-                <line x1="220" y1="10" x2="245" y2="10" stroke="#6ab187" stroke-width="2"/>
-                <text x="250" y="14" fill="#b8c4bb" font-size="9" font-family="monospace">Skenario terbaik</text>
-              </svg>
-            </div>
-
-            <p>Dalam skenario <em>Business as Usual</em> (tanpa perubahan kebijakan signifikan), proyeksi menunjukkan:</p>
-            <div class="fact-grid">
-              <div class="fact-card">
-                <span class="fact-num">2050</span>
-                <span class="fact-label">Amazon bisa mencapai titik kolaps jika deforestasi melampaui 20-25% (Nature, 2022)</span>
-              </div>
-              <div class="fact-card">
-                <span class="fact-num">2100</span>
-                <span class="fact-label">BAU: 40% hutan tropis tersisa akan hilang (IPCC scenario)</span>
-              </div>
-              <div class="fact-card">
-                <span class="fact-num">+1°C</span>
-                <span class="fact-label">Setiap kenaikan 1°C meningkatkan risiko kebakaran hutan 2x lipat</span>
-              </div>
-              <div class="fact-card">
-                <span class="fact-num">2030</span>
-                <span class="fact-label">Batas waktu kritis — mencapai nol deforestasi untuk menjaga target 1,5°C</span>
-              </div>
-            </div>
-
-            <h4>Metodologi Pengambilan Kesimpulan dalam Sains</h4>
-            <p>Ilmuwan tidak hanya melihat satu data. Mereka menggabungkan:</p>
-            <ul class="cause-list">
-              <li><div class="li-icon">📡</div><div class="li-text"><strong>Data Observasi (Empiris):</strong> Data satelit, sensus hutan, pengukuran lapangan yang dikumpulkan selama puluhan tahun. Tren yang konsisten selama 50+ tahun memberikan dasar kuat untuk proyeksi ke depan.</div></li>
-              <li><div class="li-icon">🖥️</div><div class="li-text"><strong>Model Iklim & Penggunaan Lahan:</strong> Ratusan model komputer dijalankan dengan variasi asumsi berbeda, dan hasilnya dibandingkan (ensemble modelling). Jika 90% dari 100 model berbeda memberikan hasil yang sama, kita bisa sangat yakin dengan proyeksi tersebut.</div></li>
-              <li><div class="li-icon">📚</div><div class="li-text"><strong>Tinjauan Sistematis & Konsensus Ilmiah:</strong> IPCC menganalisis ribuan jurnal ilmiah dan menyimpulkan konsensus para ahli. Ini bukan pendapat satu orang — ini sintesis dari ribuan ilmuwan di seluruh dunia.</div></li>
-              <li><div class="li-icon">📊</div><div class="li-text"><strong>Analisis Skenario:</strong> Bukannya membuat satu prediksi, ilmuwan membuat beberapa skenario (optimis, moderat, pesimis) berdasarkan asumsi kebijakan dan perilaku yang berbeda. Ini jujur tentang ketidakpastian, namun tetap informatif tentang rentang kemungkinan masa depan.</div></li>
-            </ul>
-
-            <blockquote>
-              "Data sains tidak bohong. Setiap tahun sejak 2001 kita kehilangan hutan, dan trennya jelas. Pertanyaannya bukan apakah ini akan terus terjadi jika tidak ada perubahan — pertanyaannya adalah: seberapa cepat, dan apakah kita akan bertindak sebelum terlambat?"
-              <cite>— Prof. Matthew Hansen, University of Maryland, pionir pemantauan hutan global dengan satelit</cite>
-            </blockquote>
-
-            <div class="source-bar">
-              <span class="source-chip">Hansen et al., Science 2013</span>
-              <span class="source-chip">IPCC AR6 2022</span>
-              <span class="source-chip">FAO FRA 2020</span>
-              <span class="source-chip">Global Forest Watch</span>
-              <span class="source-chip">Nature Climate Change (2022)</span>
-            </div>
+          <div class="fact-card">
+            <span class="fact-num">2100</span>
+            <span class="fact-label">BAU: 40% hutan tropis tersisa akan hilang (IPCC scenario)</span>
           </div>
+          <div class="fact-card">
+            <span class="fact-num">+1°C</span>
+            <span class="fact-label">Setiap kenaikan 1°C meningkatkan risiko kebakaran hutan 2x lipat</span>
+          </div>
+          <div class="fact-card">
+            <span class="fact-num">2030</span>
+            <span class="fact-label">Batas waktu kritis — mencapai nol deforestasi untuk menjaga target 1,5°C</span>
+          </div>
+        </div>
+
+        <h4>Metodologi Pengambilan Kesimpulan dalam Sains</h4>
+        <p>Ilmuwan tidak hanya melihat satu data. Mereka menggabungkan:</p>
+        <ul class="cause-list">
+          <li><div class="li-icon">📡</div><div class="li-text"><strong>Data Observasi (Empiris):</strong> Data satelit, sensus hutan, pengukuran lapangan yang dikumpulkan selama puluhan tahun. Tren yang konsisten selama 50+ tahun memberikan dasar kuat untuk proyeksi ke depan.</div></li>
+          <li><div class="li-icon">🖥️</div><div class="li-text"><strong>Model Iklim & Penggunaan Lahan:</strong> Ratusan model komputer dijalankan dengan variasi asumsi berbeda, dan hasilnya dibandingkan (ensemble modelling). Jika 90% dari 100 model berbeda memberikan hasil yang sama, kita bisa sangat yakin dengan proyeksi tersebut.</div></li>
+          <li><div class="li-icon">📚</div><div class="li-text"><strong>Tinjauan Sistematis & Konsensus Ilmiah:</strong> IPCC menganalisis ribuan jurnal ilmiah dan menyimpulkan konsensus para ahli. Ini bukan pendapat satu orang — ini sintesis dari ribuan ilmuwan di seluruh dunia.</div></li>
+          <li><div class="li-icon">📊</div><div class="li-text"><strong>Analisis Skenario:</strong> Bukannya membuat satu prediksi, ilmuwan membuat beberapa skenario (optimis, moderat, pesimis) berdasarkan asumsi kebijakan dan perilaku yang berbeda. Ini jujur tentang ketidakpastian, namun tetap informatif tentang rentang kemungkinan masa depan.</div></li>
+        </ul>
+
+        <blockquote>
+          "Data sains tidak bohong. Setiap tahun sejak 2001 kita kehilangan hutan, dan trennya jelas. Pertanyaannya bukan apakah ini akan terus terjadi jika tidak ada perubahan — pertanyaannya adalah: seberapa cepat, dan apakah kita akan bertindak sebelum terlambat?"
+          <cite>— Prof. Matthew Hansen, University of Maryland, pionir pemantauan hutan global dengan satelit</cite>
+        </blockquote>
+
+        <div class="source-bar">
+          <span class="source-chip">Hansen et al., Science 2013</span>
+          <span class="source-chip">IPCC AR6 2022</span>
+          <span class="source-chip">FAO FRA 2020</span>
+          <span class="source-chip">Global Forest Watch</span>
+          <span class="source-chip">Nature Climate Change (2022)</span>
         </div>
       </div>
     </div>
+  </div>
+</div>
+```
 
   </section>
 </div>
 
 <!-- FOOTER -->
+
 <footer>
   <div class="footer-logo">Defo<span>restasi</span></div>
   <p class="footer-text">
@@ -2082,7 +1980,7 @@ heights.forEach((h, i) => {
 
 // LIVE COUNTER
 let startTime = Date.now();
-const HECTARES_PER_SECOND = 0.32; // ~10 million ha/year ÷ (365*24*3600)
+const HECTARES_PER_SECOND = 0.32;
 function updateCounter() {
   const elapsed = (Date.now() - startTime) / 1000;
   const lost = (elapsed * HECTARES_PER_SECOND).toFixed(2);
@@ -2113,7 +2011,6 @@ const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) {
       e.target.classList.add('visible');
-      // Animate bars when revealed
       e.target.querySelectorAll('.impact-bar-fill').forEach(bar => {
         const w = bar.style.width || bar.dataset.width;
         if (w) { bar.dataset.width = w; bar.style.width = '0'; setTimeout(() => bar.style.width = w, 100); }
@@ -2123,7 +2020,6 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1 });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-// Bar animation on card open
 function animateBars(card) {
   card.querySelectorAll('.impact-bar-fill').forEach(bar => {
     const target = bar.style.width;
@@ -2131,41 +2027,6 @@ function animateBars(card) {
     setTimeout(() => { bar.style.width = target; }, 100);
   });
 }
-
-// IMAGE MODAL
-let currentSlot = null;
-function openModal(slot) {
-  currentSlot = slot;
-  const img = slot.querySelector('.image-preview');
-  document.getElementById('imgUrlInput').value = img.src !== window.location.href ? img.src : '';
-  document.getElementById('imgModal').classList.add('active');
-}
-function closeModal() {
-  document.getElementById('imgModal').classList.remove('active');
-  currentSlot = null;
-}
-function applyImage() {
-  const url = document.getElementById('imgUrlInput').value.trim();
-  if (!url || !currentSlot) { closeModal(); return; }
-  const img = currentSlot.querySelector('.image-preview');
-  const overlay = currentSlot.querySelector('.image-overlay');
-  const icon = currentSlot.querySelector('.slot-icon');
-  const label = currentSlot.querySelector('.slot-label');
-  const hint = currentSlot.querySelector('.slot-hint');
-  img.src = url;
-  img.style.display = 'block';
-  if (icon) icon.style.display = 'none';
-  if (label) label.style.display = 'none';
-  if (hint) hint.style.display = 'none';
-  if (overlay) overlay.style.display = 'flex';
-  closeModal();
-}
-document.getElementById('imgModal').addEventListener('click', function(e) {
-  if (e.target === this) closeModal();
-});
-document.getElementById('imgUrlInput').addEventListener('keydown', function(e) {
-  if (e.key === 'Enter') applyImage();
-});
 
 // Auto-open first card
 setTimeout(() => {
@@ -2196,5 +2057,6 @@ window.addEventListener('scroll', () => {
   });
 });
 </script>
+
 </body>
 </html>
